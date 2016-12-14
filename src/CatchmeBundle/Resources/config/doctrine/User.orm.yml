@@ -12,3 +12,16 @@ CatchmeBundle\Entity\User:
             targetEntity: CatchmeBundle\Entity\Image
             cascade: ["persist", "remove"]
     lifecycleCallbacks: {  }
+
+    manyToMany:
+        groups:
+            targetEntity: Group
+            joinTable:
+                name: fos_user_group
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id
+

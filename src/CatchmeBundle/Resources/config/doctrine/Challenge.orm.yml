@@ -1,0 +1,39 @@
+CatchmeBundle\Entity\Challenge:
+    type: entity
+    table: null
+    repositoryClass: CatchmeBundle\Repository\ChallengeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '25'
+        description:
+            type: text
+        longitude:
+            type: integer
+        latitude:
+            type: integer
+        duree:
+            type: integer
+            nullable: true
+        dateCreation:
+            type: datetime
+            column: date_create
+
+    manyToMany:
+        images:
+            targetEntity: CatchmeBundle\Entity\Image
+            joinTable:
+              name: images_challenges
+              joinColumns:
+                challenges_id:
+                  referencedColumnName: id
+              inverseJoinColumns:
+                images_id:
+                  referencedColumnName: id
+    lifecycleCallbacks: {  }

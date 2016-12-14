@@ -7,6 +7,16 @@ CatchmeBundle\Entity\User:
             generator:
                 strategy: AUTO
 
+    fields:
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        score:
+            type: integer
+
     manyToOne:
         image:
             targetEntity: CatchmeBundle\Entity\Image

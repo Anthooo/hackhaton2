@@ -1,11 +1,9 @@
-/* line 1, ../sass/_login.scss */
-html, body {
+html,body{
   position: relative;
   height: 100%;
 }
 
-/* line 6, ../sass/_login.scss */
-.login-container {
+.login-container{
   position: relative;
   width: 300px;
   margin: 80px auto;
@@ -15,8 +13,7 @@ html, body {
   border: 1px solid #ccc;
 }
 
-/* line 16, ../sass/_login.scss */
-#output {
+#output{
   position: absolute;
   width: 300px;
   top: -75px;
@@ -24,91 +21,79 @@ html, body {
   color: #fff;
 }
 
-/* line 24, ../sass/_login.scss */
-#output.alert-success {
-  background: #19cc19;
+#output.alert-success{
+  background: rgb(25, 204, 25);
 }
 
-/* line 28, ../sass/_login.scss */
-#output.alert-danger {
-  background: #e46969;
+#output.alert-danger{
+  background: rgb(228, 105, 105);
 }
 
-/* line 33, ../sass/_login.scss */
+
 .remember {
   margin-top: 15px;
 }
 
-/* line 37, ../sass/_login.scss */
-.login-container::before, .login-container::after {
+.login-container::before,.login-container::after{
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 3.5px;
-  left: 0;
+  width: 100%;height: 100%;
+  top: 3.5px;left: 0;
   background: #fff;
   z-index: -1;
   -webkit-transform: rotateZ(4deg);
   -moz-transform: rotateZ(4deg);
   -ms-transform: rotateZ(4deg);
   border: 1px solid #ccc;
+
 }
 
-/* line 51, ../sass/_login.scss */
-.login-container::after {
+.login-container::after{
   top: 5px;
   z-index: -2;
   -webkit-transform: rotateZ(-2deg);
   -moz-transform: rotateZ(-2deg);
   -ms-transform: rotateZ(-2deg);
+
 }
 
-/* line 60, ../sass/_login.scss */
-.avatar {
-  width: 100px;
-  height: 100px;
+.avatar{
+  width: 100px;height: 100px;
   margin: 10px auto 30px;
   border-radius: 100%;
   border: 2px solid #aaa;
   background-size: cover;
 }
 
-/* line 68, ../sass/_login.scss */
-.form-box input {
+.form-box input{
   width: 100%;
   padding: 10px;
   text-align: center;
-  height: 40px;
-  border: 1px solid #ccc;
-  transition: 0.2s ease-in-out;
+  height:40px;
+  border: 1px solid #ccc;;
+  transition:0.2s ease-in-out;
 }
 
-/* line 77, ../sass/_login.scss */
-.form-box input:focus {
+.form-box input:focus{
   outline: 0;
   background: #eee;
 }
 
-/* line 82, ../sass/_login.scss */
-.form-box input[type="text"] {
+.form-box input[type="text"]{
   border-radius: 5px 5px 0 0;
   text-transform: lowercase;
 }
 
-/* line 87, ../sass/_login.scss */
-.form-box input[type="password"] {
+.form-box input[type="password"]{
   border-radius: 0 0 5px 5px;
   border-top: 0;
 }
 
-/* line 92, ../sass/_login.scss */
-.form-box button.login {
-  margin-top: 15px;
+.form-box button.login{
+  margin-top:15px;
   padding: 10px 20px;
 }
 
-/* line 97, ../sass/_login.scss */
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -122,12 +107,14 @@ html, body {
     -webkit-transform: translateY(20px);
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -135,6 +122,7 @@ html, body {
     -ms-transform: translateY(20px);
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -142,18 +130,8 @@ html, body {
     transform: translateY(0);
   }
 }
-/* line 134, ../sass/_login.scss */
+
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
-}
-
-/* line 1, ../sass/_navbar.scss */
-.navbar-brand {
-  padding: 3px 15px;
-}
-
-/* line 5, ../sass/_navbar.scss */
-.navbar-brand > img {
-  width: 30%;
 }

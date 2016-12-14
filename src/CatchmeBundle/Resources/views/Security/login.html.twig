@@ -1,9 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-    {% include '@Catchme/Include/navbar.html.twig' %}
-
+        {% include '@Catchme/Include/navbar1.html.twig' %}
 
     {% block fos_user_content %}
         {% if error %}
@@ -17,7 +15,7 @@
                 <h1>Se connecter</h1>
 
 
-                {#<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />#}
+                <img id="profile-img" class="profile-img-card" src="{{ asset('bundles/catchme/images/catchMe.png') }}" />
                 <p id="profile-name" class="profile-name-card"></p>
                 <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />

@@ -5,8 +5,19 @@
         <h1>User creation</h1>
 
         {{ form_start(form) }}
+
+            {# Affichage de l'image sélectionnée #}
             <div>
-                <div>Image</div>
+                <img class="hide" id="blah" src="#" alt="your image" />
+            </div>
+
+        <input type='file' id="imgInp" />
+        <br>
+        <img id="blah" src="http://i.imgur.com/zAyt4lX.jpg" alt="your image" height="100" />
+
+
+            <div>
+                <div class="mdb-select">Image</div>
                 {{ form_widget(form.image.file) }}
             </div>
             {{ form_errors(form.image.file) }}

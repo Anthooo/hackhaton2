@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% include '@Catchme/Include/navbar.html.twig' %}
+    {% if is_granted("ROLE_USER") %}
+        {% include '@Catchme/Include/navbar2.html.twig' %}
+    {% else %}
+        {% include '@Catchme/Include/navbar1.html.twig' %}
+    {% endif %}
 
 
 

@@ -6,6 +6,10 @@ catchme_homepage:
     path:     /
     defaults: { _controller: CatchmeBundle:Default:index }
 
+catchme_classement:
+    path: /classement
+    defaults: { _controller: CatchmeBundle:Default:classement}
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

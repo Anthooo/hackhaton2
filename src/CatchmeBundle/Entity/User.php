@@ -19,9 +19,34 @@ class User extends BaseUser
      */
     protected $id;
 
+    private $image;
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * Set image
+     *
+     * @param \CatchmeBundle\Entity\Image $image
+     * @return User
+     */
+    public function setImage(\CatchmeBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \CatchmeBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

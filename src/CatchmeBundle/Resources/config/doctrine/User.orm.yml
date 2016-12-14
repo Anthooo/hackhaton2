@@ -6,3 +6,9 @@ CatchmeBundle\Entity\User:
             type: integer
             generator:
                 strategy: AUTO
+
+    manyToOne:
+        image:
+            targetEntity: CatchmeBundle\Entity\Image
+            cascade: ["persist", "remove"]
+    lifecycleCallbacks: {  }

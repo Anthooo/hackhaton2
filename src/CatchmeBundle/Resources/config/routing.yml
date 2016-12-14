@@ -1,3 +1,7 @@
+catchme_user:
+    resource: "@CatchmeBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 catchme_homepage:
     path:     /
     defaults: { _controller: CatchmeBundle:Default:index }

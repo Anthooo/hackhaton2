@@ -2,6 +2,9 @@
 
 {% block body %}
 
+    {% include '@Catchme/Include/navbar.html.twig' %}
+
+
 {% block fos_user_content %}
 {% if error %}
     <div>{{ error|trans({}, 'FOSUserBundle') }}</div>

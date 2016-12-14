@@ -1,0 +1,3 @@
+catchme_homepage:
+    path:     /
+    defaults: { _controller: CatchmeBundle:Default:index }

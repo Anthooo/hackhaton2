@@ -1,0 +1,4 @@
+services:
+#    catchme.example:
+#        class: CatchmeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

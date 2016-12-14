@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace CatchmeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class CatchmeBundle extends Bundle
 {
 }

@@ -147,3 +147,13 @@ html, body {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
+
+/* line 1, ../sass/_navbar.scss */
+.navbar-brand {
+  padding: 3px 15px;
+}
+
+/* line 5, ../sass/_navbar.scss */
+.navbar-brand > img {
+  width: 30%;
+}

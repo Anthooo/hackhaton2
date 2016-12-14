@@ -19,6 +19,8 @@ class User extends BaseUser
      */
     protected $id;
 
+    private $image;
+
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group")
      * @ORM\JoinTable(name="fos_user_user_group",
@@ -34,5 +36,26 @@ class User extends BaseUser
         // your own logic
     }
 
+    /**
+     * Set image
+     *
+     * @param \CatchmeBundle\Entity\Image $image
+     * @return User
+     */
+    public function setImage(\CatchmeBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
 
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \CatchmeBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

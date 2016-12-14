@@ -7,6 +7,12 @@ CatchmeBundle\Entity\User:
             generator:
                 strategy: AUTO
 
+    manyToOne:
+        image:
+            targetEntity: CatchmeBundle\Entity\Image
+            cascade: ["persist", "remove"]
+    lifecycleCallbacks: {  }
+
     manyToMany:
         groups:
             targetEntity: Group
@@ -18,3 +24,4 @@ CatchmeBundle\Entity\User:
                 inverseJoinColumns:
                     group_id:
                         referencedColumnName: id
+

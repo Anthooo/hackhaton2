@@ -102,21 +102,19 @@ class ChallengeController extends Controller
         );
     }
 
-  // Isole lat et long de la photo
-  $latitudePhoto = ($response['gps']['lat']);
-  $longitudePhoto = ($response['gps']['lng']);
-  // calcul nouvelle lat et long pour centre zone de recherche
-  $randomFloatLat = (rand(0, 1) / 10000);
-  // var_dump(floatval($randomFloatLat));
-  $randomFloatLong = (rand(0, 99) / 10000);
-  // var_dump(floatval($randomFloatLong));
-  $latitudeCentreDecale = ($response['gps']['lat']-$randomFloatLat);
-  $longitudeCentreDecale = ($response['gps']['lng']+$randomFloatLong);
+      // Isole lat et long de la photo
+      $latitudePhoto = ($response['gps']['lat']);
+      $longitudePhoto = ($response['gps']['lng']);
+      // calcul nouvelle lat et long pour centre zone de recherche
+      $randomFloatLat = (rand(0, 1) / 10000);
+      $randomFloatLong = (rand(0, 99) / 10000);
+      $latitudeCentreDecale = ($response['gps']['lat']-$randomFloatLat);
+      $longitudeCentreDecale = ($response['gps']['lng']+$randomFloatLong);
 
         return $this->render('@Catchme/challenge/show.html.twig', array(
             'challenge' => $challenge,
             'longitudeCentre' => $longitudeCentreDecale,
-            'latitideCentre' => $latitudeCentreDecale,
+            'latitudeCentre' => $latitudeCentreDecale,
 //            'image'=> $challenge->getImages(),
 /*            'delete_form' => $deleteForm->createView(),*/
         ));

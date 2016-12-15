@@ -14,10 +14,13 @@ CatchmeBundle\Entity\Challenge:
             length: '25'
         description:
             type: text
+        localisation:
+            type: string
+            length: '25'
         longitude:
-            type: integer
+            type: float
         latitude:
-            type: integer
+            type: float
         duree:
             type: integer
             nullable: true
@@ -26,14 +29,14 @@ CatchmeBundle\Entity\Challenge:
             column: date_create
 
     manyToMany:
-        images:
+        image:
             targetEntity: CatchmeBundle\Entity\Image
             joinTable:
               name: images_challenges
               joinColumns:
-                challenges_id:
+                images_id:
                   referencedColumnName: id
               inverseJoinColumns:
-                images_id:
+                challenges_id:
                   referencedColumnName: id
     lifecycleCallbacks: {  }

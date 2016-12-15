@@ -13,7 +13,16 @@ class ChallengeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('description')->add('longitude')->add('latitude')->add('duree')->add('dateCreation')->add('images')        ;
+        $builder
+            ->add('nom')
+            ->add('description')
+            -> add('localisation')
+            ->add('longitude')
+            ->add('latitude')
+            ->add('duree')
+            ->add('dateCreation')
+            ->add('image', ImageType::class, array('data_class' => null))
+        ;
     }
     
     /**

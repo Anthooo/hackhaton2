@@ -11,8 +11,9 @@ class Challenge
     
 
 //    GENERATED CODE
+ 
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -27,17 +28,22 @@ class Challenge
     private $description;
 
     /**
-     * @var int
+     * @var string
+     */
+    private $localisation;
+
+    /**
+     * @var float
      */
     private $longitude;
 
     /**
-     * @var int
+     * @var float
      */
     private $latitude;
 
     /**
-     * @var int
+     * @var integer
      */
     private $duree;
 
@@ -46,11 +52,23 @@ class Challenge
      */
     private $dateCreation;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $image;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->image = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -106,9 +124,33 @@ class Challenge
     }
 
     /**
+     * Set localisation
+     *
+     * @param string $localisation
+     *
+     * @return Challenge
+     */
+    public function setLocalisation($localisation)
+    {
+        $this->localisation = $localisation;
+
+        return $this;
+    }
+
+    /**
+     * Get localisation
+     *
+     * @return string
+     */
+    public function getLocalisation()
+    {
+        return $this->localisation;
+    }
+
+    /**
      * Set longitude
      *
-     * @param integer $longitude
+     * @param float $longitude
      *
      * @return Challenge
      */
@@ -122,7 +164,7 @@ class Challenge
     /**
      * Get longitude
      *
-     * @return int
+     * @return float
      */
     public function getLongitude()
     {
@@ -132,7 +174,7 @@ class Challenge
     /**
      * Set latitude
      *
-     * @param integer $latitude
+     * @param float $latitude
      *
      * @return Challenge
      */
@@ -146,7 +188,7 @@ class Challenge
     /**
      * Get latitude
      *
-     * @return int
+     * @return float
      */
     public function getLatitude()
     {
@@ -170,7 +212,7 @@ class Challenge
     /**
      * Get duree
      *
-     * @return int
+     * @return integer
      */
     public function getDuree()
     {
@@ -200,18 +242,6 @@ class Challenge
     {
         return $this->dateCreation;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $images;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add image
@@ -222,7 +252,7 @@ class Challenge
      */
     public function addImage(\CatchmeBundle\Entity\Image $image)
     {
-        $this->images[] = $image;
+        $this->image[] = $image;
 
         return $this;
     }
@@ -234,16 +264,16 @@ class Challenge
      */
     public function removeImage(\CatchmeBundle\Entity\Image $image)
     {
-        $this->images->removeElement($image);
+        $this->image->removeElement($image);
     }
 
     /**
-     * Get images
+     * Get image
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getImages()
+    public function getImage()
     {
-        return $this->images;
+        return $this->image;
     }
 }

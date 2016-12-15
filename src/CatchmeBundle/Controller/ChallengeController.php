@@ -72,13 +72,20 @@ class ChallengeController extends Controller
     public function editAction(Request $request, Challenge $challenge)
     {
         $deleteForm = $this->createDeleteForm($challenge);
+        $image = $em->getRepository('CatchmeBundle:Image')->findOneById($challenge->getImage()->getId());
+
         $editForm = $this->createForm('CatchmeBundle\Form\ChallengeType', $challenge);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $image->preUpload();
+            $em->persist($challenge);
+            $em->flush();
 
-            return $this->redirectToRoute('challenge_edit', array('id' => $challenge->getId()));
+            return $this->redirectToRoute('challenge_edit', array(
+                'id' => $challenge->getId()
+            ));
         }
 
         return $this->render('@Catchme/user/challenge/edit.html.twig', array(
@@ -92,33 +99,53 @@ class ChallengeController extends Controller
      * Deletes a challenge entity.
      *
      */
-    public function deleteAction(Request $request, Challenge $challenge)
-    {
-        $form = $this->createDeleteForm($challenge);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+    public function deleteAction($id)
+    {
+//        Si l'$id est définie alors :
+        if ($id) {
             $em = $this->getDoctrine()->getManager();
+            // Recherche L'ARTICLE à supprimer parmi LES ARTICLES
+            $article = $em->getRepository('CatchmeBundle:Challenge')->findOneById($id);
+            // Recherche L'IMAGE DE L'ARTICLE visé
+            $image = $em->getRepository('CatchmeBundle:Image')->findOneById($article->getImage()->getId());
+            // Supprime L'ARTICLE et SON IMAGE associée
             $em->remove($challenge);
-            $em->flush($challenge);
-        }
-
-        return $this->redirectToRoute('challenge_index');
+            $em->remove($image);
+            // Envoie la requête à la BDD
+            $em->flush();
+            return $this->redirectToRoute('challenge_show');
+        } else
+            return $this->redirectToRoute('challenge_show');
     }
 
-    /**
-     * Creates a form to delete a challenge entity.
-     *
-     * @param Challenge $challenge The challenge entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Challenge $challenge)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('challenge_delete', array('id' => $challenge->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
+//    public function deleteAction(Request $request, Challenge $challenge)
+//    {
+//        $form = $this->createDeleteForm($challenge);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->remove($challenge);
+//            $em->flush($challenge);
+//        }
+//
+//        return $this->redirectToRoute('challenge_index');
+//    }
+//
+//    /**
+//     * Creates a form to delete a challenge entity.
+//     *
+//     * @param Challenge $challenge The challenge entity
+//     *
+//     * @return \Symfony\Component\Form\Form The form
+//     */
+//    private function createDeleteForm(Challenge $challenge)
+//    {
+//        return $this->createFormBuilder()
+//            ->setAction($this->generateUrl('challenge_delete', array('id' => $challenge->getId())))
+//            ->setMethod('DELETE')
+//            ->getForm()
+//        ;
+//    }
 }

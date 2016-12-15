@@ -1,4 +1,9 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="jumbotron">
 
 {% block fos_user_content %}
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'FOSUserBundle') }}</p>
@@ -7,3 +12,10 @@
         {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>{% endif %}
     {% endif %}
 {% endblock fos_user_content %}
+
+        <div>
+            <a class="btn btn-primary center-block" href="{{ path('challenge_index') }}">Lancez-vous !</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

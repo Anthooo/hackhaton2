@@ -66,6 +66,17 @@ class ChallengeController extends Controller
         ));
     }
 
+    public function validationAction(Challenge $challenge, Request $request)
+    {
+        $form = $this->createForm('CatchmeBundle\Form\ChallengeType', $challenge);
+        $form->handleRequest($request);
+
+        return $this->render('@Catchme/challenge/validation.html.twig', array(
+            'challenges' => $challenge,
+            'form' => $form->createView(),
+        ));
+    }
+
     /**
      * Displays a form to edit an existing challenge entity.
      *

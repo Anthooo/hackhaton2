@@ -3,54 +3,26 @@
 {% block body %}
     {% include '@Catchme/Include/navbar2.html.twig' %}
 
-<div class="container">
-    <div class="jumbotron">
-    <h1>C'est parti ?</h1>
+    <div class="container">
+        <div class="jumbotron register">
+            <h1>C'est parti ?</h1>
 
-    {#<table class="table table-bordered">#}
-        {#<tbody>#}
-            {#<tr>#}
-                {#<th>Id</th>#}
-                {#<td>{{ challenge.id }}</td>#}
-            {#</tr>#}
+            <h2>{{ challenge.nom }}</h2>
 
-                <h2>{{ challenge.nom }}</h2>
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Description</th>#}
-                {#<td>{{ challenge.description }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Localisation</th>#}
-                {#<td>{{ challenge.localisation }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Longitude</th>#}
-                {#<td>{{ challenge.longitude }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Latitude</th>#}
-                {#<td>{{ challenge.latitude }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                <p>Catch me if you can !</p>
+            <p>Catch me if you can !</p>
 
-                <div class="center-block">
-                    <a class="thumbnail fancybox" rel="ligthbox" href="{{ asset('uploads/images/') }}{{ challenge.image }}">
-                        <img class="img-responsive img-circle" alt="" src="{{ asset('uploads/images/') }}{{ challenge.image }}" />
-                        {#<div class='text-right'>#}
-                            {#<small class='text-muted'>Image Title</small>#}
-                        {#</div> <!-- text-right / end -->#}
-                    </a>
-                </div>
-            {#</tr>#}
-        {#</tbody>#}
-    {#</table>#}
+            <div class="center-block">
+                <a class="thumbnail fancybox" rel="ligthbox" href="{{ asset('uploads/images/') }}{{ challenge.image }}">
+                    <img class="img-responsive img-circle" alt="" src="{{ asset('uploads/images/') }}{{ challenge.image }}" />
+                </a>
 
-    <p>
-            <a class="btn btn-primary" href="{{ path('challenge_index') }}">Retour à la liste</a>
+            </div>
 
-    </p>
+            <p>
+                <a class="btn btn-primary" href="{{ path('challenge_validation', { 'id': challenge.id }) }}">J'ai trouvé !</a>
+
+                <a class="btn btn-primary" href="{{ path('challenge_index') }}">Retour à la liste</a>
+            </p>
+        </div>
     </div>
-</div>
 {% endblock %}

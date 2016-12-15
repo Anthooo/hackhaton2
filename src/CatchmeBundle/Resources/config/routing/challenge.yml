@@ -22,3 +22,8 @@ challenge_delete:
     path:     /{id}/delete
     defaults: { _controller: "CatchmeBundle:Challenge:delete" }
     methods:  DELETE
+
+challenge_validation:
+    path:     /{id}/validate
+    defaults: { _controller: "CatchmeBundle:Challenge:validation" }
+    methods:  [GET, POST]

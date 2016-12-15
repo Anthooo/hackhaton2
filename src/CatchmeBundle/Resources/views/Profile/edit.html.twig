@@ -1,5 +1,14 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "base.html.twig" %}
 
-{% block fos_user_content %}
-{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
-{% endblock fos_user_content %}
+{% block body %}
+    {% include '@Catchme/Include/navbar2.html.twig' %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Votre compte</h1>
+            {% block fos_user_content %}
+                {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+            {% endblock fos_user_content %}
+        </div>
+    </div>
+{% endblock %}

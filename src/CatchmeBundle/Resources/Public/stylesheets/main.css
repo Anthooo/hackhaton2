@@ -8,6 +8,29 @@ h1 {
   color: black;
 }
 
+/* line 9, ../sass/_general.scss */
+.jumbotron p {
+  color: dimgrey;
+  text-align: center;
+}
+
+/* line 14, ../sass/_general.scss */
+.jumbotron {
+  background-color: RGBA(238, 238, 238, 0.8);
+  margin-top: 15%;
+}
+
+/* line 19, ../sass/_general.scss */
+body {
+  background: url("../images/back2.jpg");
+  background-position: center;
+}
+
+/* line 24, ../sass/_general.scss */
+.classement {
+  margin-top: 10%;
+}
+
 /* line 1, ../sass/_login.scss */
 h2 {
   color: white;
@@ -20,12 +43,12 @@ p {
 
 /* line 4, ../sass/_login.scss */
 .card-container.card {
-  width: 500px;
+  width: 80%;
   padding: 40px 40px;
 }
 
 /* line 9, ../sass/_login.scss */
-.btn {
+.login .btn {
   font-weight: 700;
   height: 36px;
   -moz-user-select: none;
@@ -39,7 +62,7 @@ p {
  */
 /* line 21, ../sass/_login.scss */
 .card {
-  background-color: #F7F7F7;
+  background-color: RGBA(238, 238, 238, 0.8);
   /* just in case there no content*/
   padding: 20px 25px 30px;
   margin: 0 auto 25px;

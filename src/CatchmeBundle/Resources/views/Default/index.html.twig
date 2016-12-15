@@ -7,6 +7,16 @@
         {% include '@Catchme/Include/navbar1.html.twig' %}
     {% endif %}
 
+    <div class="container">
+        <div class="jumbotron">
+            <img class="center-block" src="{{ asset('bundles/catchme/images/catchMe.png') }}"/>
+            <h1>Bienvenue !</h1>
+            <p class="index">Connectez-vous ou enregistrez vous pour participer à un challenge</p>
+            <p><a class="btn btn-primary btn-lg" href="{{ path('fos_user_security_login') }}" role="button">Je me connecte</a> <a class="btn btn-primary btn-lg" href="{{ path('fos_user_registration_register') }}" role="button">Je m'enregistre</a></p>
+
+        </div>
+    </div>
+
 
 
 {% endblock %}

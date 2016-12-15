@@ -5,3 +5,22 @@ h1 {
 .profile {
   color: black;
 }
+
+.jumbotron p {
+  color: dimgrey;
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: RGBA(238, 238, 238, 0.8);
+  margin-top: 15%;
+}
+
+body {
+  background: url('../images/back2.jpg');
+  background-position: center;
+}
+
+.classement {
+  margin-top: 10%;
+}

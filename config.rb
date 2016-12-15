@@ -3,10 +3,10 @@ require 'compass/import-once/activate'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "/src/CatchmeBundle/Resources/Public/stylesheets"
-sass_dir = "/src/CatchmeBundle/Resources/Public/sass"
-images_dir = "/src/CatchmeBundle/Resources/Public/images"
-javascripts_dir = "/src/CatchmeBundle/Resources/Public/javascripts"
+css_dir = "/src/CatchmeBundle/Resources/public/stylesheets"
+sass_dir = "/src/CatchmeBundle/Resources/public/sass"
+images_dir = "/src/CatchmeBundle/Resources/public/images"
+javascripts_dir = "/src/CatchmeBundle/Resources/public/javascripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

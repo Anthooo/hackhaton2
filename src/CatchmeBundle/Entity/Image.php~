@@ -30,7 +30,7 @@ class Image
 
     protected function getUploadDir()
     {
-        return 'images';
+        return 'uploads/images';
     }
 
     protected function getUploadRootDir()

@@ -16,6 +16,7 @@ CatchmeBundle\Entity\User:
             length: 255
         score:
             type: integer
+            nullable: true
 
     manyToOne:
         image:

@@ -4,12 +4,15 @@ namespace CatchmeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Image
  */
 
 class Image
+
+
 {
     public function __toString()
     {

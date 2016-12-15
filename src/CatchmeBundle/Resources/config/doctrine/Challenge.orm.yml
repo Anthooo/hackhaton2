@@ -11,32 +11,26 @@ CatchmeBundle\Entity\Challenge:
     fields:
         nom:
             type: string
-            length: '25'
+            length: '30'
         description:
             type: text
+            nullable: true
         localisation:
             type: string
-            length: '25'
+            length: '30'
         longitude:
             type: float
         latitude:
             type: float
-        duree:
-            type: integer
-            nullable: true
-        dateCreation:
-            type: datetime
-            column: date_create
-
     manyToMany:
-        image:
-            targetEntity: CatchmeBundle\Entity\Image
-            joinTable:
-              name: images_challenges
-              joinColumns:
-                images_id:
-                  referencedColumnName: id
-              inverseJoinColumns:
-                challenges_id:
-                  referencedColumnName: id
+            image:
+                targetEntity: CatchmeBundle\Entity\Image
+                joinTable:
+                  name: images_challenges
+                  joinColumns:
+                    images_id:
+                      referencedColumnName: id
+                  inverseJoinColumns:
+                    challenges_id:
+                      referencedColumnName: id
     lifecycleCallbacks: {  }

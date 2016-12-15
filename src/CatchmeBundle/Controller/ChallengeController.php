@@ -22,7 +22,7 @@ class ChallengeController extends Controller
 
         $challenges = $em->getRepository('CatchmeBundle:Challenge')->findAll();
 
-        return $this->render('CatchmeBundle:user/challenge:index.html.twig', array(
+        return $this->render('challenge/index.html.twig', array(
             'challenges' => $challenges,
         ));
     }
@@ -45,7 +45,7 @@ class ChallengeController extends Controller
             return $this->redirectToRoute('challenge_show', array('id' => $challenge->getId()));
         }
 
-        return $this->render('@Catchme/user/challenge/new.html.twig', array(
+        return $this->render('challenge/new.html.twig', array(
             'challenge' => $challenge,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class ChallengeController extends Controller
     {
         $deleteForm = $this->createDeleteForm($challenge);
 
-        return $this->render('@Catchme/user/challenge/show.html.twig', array(
+        return $this->render('challenge/show.html.twig', array(
             'challenge' => $challenge,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -71,24 +71,22 @@ class ChallengeController extends Controller
      */
     public function editAction(Request $request, Challenge $challenge)
     {
+        $em = $this->getDoctrine()->getManager();
+        $image = $em->getRepository('CatchmeBundle:Image')->findOneById($modele->getImage()->getId());
         $deleteForm = $this->createDeleteForm($challenge);
-        $image = $em->getRepository('CatchmeBundle:Image')->findOneById($challenge->getImage()->getId());
-
         $editForm = $this->createForm('CatchmeBundle\Form\ChallengeType', $challenge);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $image->preUpload();
-            $em->persist($challenge);
+            $em->persist($modele);
             $em->flush();
 
-            return $this->redirectToRoute('challenge_edit', array(
-                'id' => $challenge->getId()
-            ));
+            return $this->redirectToRoute('challenge_edit', array('id' => $challenge->getId()));
         }
 
-        return $this->render('@Catchme/user/challenge/edit.html.twig', array(
+        return $this->render('challenge/edit.html.twig', array(
             'challenge' => $challenge,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -99,23 +97,23 @@ class ChallengeController extends Controller
      * Deletes a challenge entity.
      *
      */
-
-    public function deleteAction($id)
+    public function deleteAction(Request $request, Challenge $challenge)
     {
-//        Si l'$id est définie alors :
         if ($id) {
             $em = $this->getDoctrine()->getManager();
-            // Recherche L'ARTICLE à supprimer parmi LES ARTICLES
-            $article = $em->getRepository('CatchmeBundle:Challenge')->findOneById($id);
-            // Recherche L'IMAGE DE L'ARTICLE visé
-            $image = $em->getRepository('CatchmeBundle:Image')->findOneById($article->getImage()->getId());
-            // Supprime L'ARTICLE et SON IMAGE associée
+// Recherche LE MODELE à supprimer parmi LES MODELES
+            $modele = $em->getRepository('CatchmeBundle:Challenge')->findOneById($id);
+// Recherche L'IMAGE DU MODELE visé
+            $image = $em->getRepository('CatchmeBundle:Image')->findOneById($challenge->getImage()->getId());
+// Supprime LE MODELE et SON IMAGE associée
             $em->remove($challenge);
             $em->remove($image);
-            // Envoie la requête à la BDD
+// Envoie la requête à la BDD
             $em->flush();
-            return $this->redirectToRoute('challenge_show');
+
+            return $this->redirectToRoute('challenge_index');
         } else
-            return $this->redirectToRoute('challenge_show');
+            return $this->redirectToRoute('challenge_index');
+
     }
 }

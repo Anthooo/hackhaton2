@@ -7,13 +7,8 @@ namespace CatchmeBundle\Entity;
  */
 class Challenge
 {
-
-    
-
-//    GENERATED CODE
- 
     /**
-     * @var integer
+     * @var int
      */
     private $id;
 
@@ -42,33 +37,16 @@ class Challenge
      */
     private $latitude;
 
-    /**
-     * @var integer
-     */
-    private $duree;
 
     /**
-     * @var \DateTime
-     */
-    private $dateCreation;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \CatchmeBundle\Entity\Image
      */
     private $image;
-
-//    /**
-//     * Constructor
-//     */
-//    public function __construct()
-//    {
-//        $this->image = new \Doctrine\Common\Collections\ArrayCollection();
-//    }
 
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -195,54 +173,6 @@ class Challenge
         return $this->latitude;
     }
 
-    /**
-     * Set duree
-     *
-     * @param integer $duree
-     *
-     * @return Challenge
-     */
-    public function setDuree($duree)
-    {
-        $this->duree = $duree;
-
-        return $this;
-    }
-
-    /**
-     * Get duree
-     *
-     * @return integer
-     */
-    public function getDuree()
-    {
-        return $this->duree;
-    }
-
-    /**
-     * Set dateCreation
-     *
-     * @param \DateTime $dateCreation
-     *
-     * @return Challenge
-     */
-    public function setDateCreation($dateCreation)
-    {
-        $this->dateCreation = $dateCreation;
-
-        return $this;
-    }
-
-    /**
-     * Get dateCreation
-     *
-     * @return \DateTime
-     */
-    public function getDateCreation()
-    {
-        return $this->dateCreation;
-    }
-
 
     /**
      * Set image
@@ -251,7 +181,7 @@ class Challenge
      *
      * @return Challenge
      */
-    public function setImage(\CatchmeBundle\Entity\Image $image = null)
+    public function setImage(Image $image = null)
     {
         $this->image = $image;
 
@@ -267,37 +197,5 @@ class Challenge
     {
         return $this->image;
     }
-//    /**
-//     * Add image
-//     *
-//     * @param \CatchmeBundle\Entity\Image $image
-//     *
-//     * @return Challenge
-//     */
-//    public function addImage(\CatchmeBundle\Entity\Image $image)
-//    {
-//        $this->image[] = $image;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Remove image
-//     *
-//     * @param \CatchmeBundle\Entity\Image $image
-//     */
-//    public function removeImage(\CatchmeBundle\Entity\Image $image)
-//    {
-//        $this->image->removeElement($image);
-//    }
-//
-//    /**
-//     * Get image
-//     *
-//     * @return \Doctrine\Common\Collections\Collection
-//     */
-//    public function getImage()
-//    {
-//        return $this->image;
-//    }
 }
+

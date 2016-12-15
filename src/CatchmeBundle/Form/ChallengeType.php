@@ -5,6 +5,7 @@ namespace CatchmeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class ChallengeType extends AbstractType
 {
@@ -16,16 +17,19 @@ class ChallengeType extends AbstractType
         $builder
             ->add('nom')
             ->add('description')
-            -> add('localisation')
+            ->add('localisation')
             ->add('longitude')
             ->add('latitude')
-            ->add('duree')
-            ->add('dateCreation')
             ->add('image', ImageType::class)
-//            , array('data_class' => null)
         ;
     }
-    
+
+    public function __construct()
+
+    {
+        $this->image = new ArrayCollection();
+
+    }
     /**
      * {@inheritdoc}
      */

@@ -30,18 +30,9 @@
                 <td>{{ challenge.latitude }}</td>
             </tr>
             <tr>
-                <th>Duree</th>
-                <td>{{ challenge.duree }}</td>
-            </tr>
-            <tr>
-                <th>Datecreation</th>
-                <td>{% if challenge.dateCreation %}{{ challenge.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
                 <th>Image</th>
-                <td>{{ challenge.image}}</td>
+                <td>{{ challenge.image.file }}</td>
             </tr>
-            <tr>
         </tbody>
     </table>
 

@@ -12,8 +12,6 @@
                 <th>Localisation</th>
                 <th>Longitude</th>
                 <th>Latitude</th>
-                <th>Duree</th>
-                <th>Datecreation</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -27,9 +25,12 @@
                 <td>{{ challenge.localisation }}</td>
                 <td>{{ challenge.longitude }}</td>
                 <td>{{ challenge.latitude }}</td>
-                <td>{{ challenge.duree }}</td>
-                <td>{{ challenge.image}}</td>
-                <td>{% if challenge.dateCreation %}{{ challenge.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                {% for image in challenge.image %}
+
+                <td>{{ image.file }}</td>
+                {% endfor %}
+
+
                 <td>
                     <ul>
                         <li>

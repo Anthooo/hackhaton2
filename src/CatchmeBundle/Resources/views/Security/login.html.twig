@@ -8,7 +8,7 @@
 
 
         <div class="container">
-            <div class="card card-container">
+            <div class="jumbotron">
                 <h1>Se connecter</h1>
 
                 {% block fos_user_content %}
@@ -16,7 +16,7 @@
                     <div class="alert alert-danger" role="alert">{{ error|trans({}, 'FOSUserBundle') }}</div>
                 {% endif %}
 
-                <img id="profile-img" class="profile-img-card" src="{{ asset('bundles/catchme/images/catchMe.png') }}" />
+                {#<img id="profile-img" class="profile-img-card" src="{{ asset('bundles/catchme/images/catchMe.png') }}" />#}
                 <p id="profile-name" class="profile-name-card"></p>
                 <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />

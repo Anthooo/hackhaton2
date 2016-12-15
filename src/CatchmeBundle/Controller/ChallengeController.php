@@ -118,34 +118,4 @@ class ChallengeController extends Controller
         } else
             return $this->redirectToRoute('challenge_show');
     }
-
-//    public function deleteAction(Request $request, Challenge $challenge)
-//    {
-//        $form = $this->createDeleteForm($challenge);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->remove($challenge);
-//            $em->flush($challenge);
-//        }
-//
-//        return $this->redirectToRoute('challenge_index');
-//    }
-//
-//    /**
-//     * Creates a form to delete a challenge entity.
-//     *
-//     * @param Challenge $challenge The challenge entity
-//     *
-//     * @return \Symfony\Component\Form\Form The form
-//     */
-//    private function createDeleteForm(Challenge $challenge)
-//    {
-//        return $this->createFormBuilder()
-//            ->setAction($this->generateUrl('challenge_delete', array('id' => $challenge->getId())))
-//            ->setMethod('DELETE')
-//            ->getForm()
-//        ;
-//    }
 }

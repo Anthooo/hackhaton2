@@ -21,7 +21,8 @@ class ChallengeType extends AbstractType
             ->add('latitude')
             ->add('duree')
             ->add('dateCreation')
-            ->add('image', ImageType::class, array('data_class' => null))
+            ->add('image', ImageType::class)
+//            , array('data_class' => null)
         ;
     }
     

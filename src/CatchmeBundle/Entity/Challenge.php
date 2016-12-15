@@ -57,13 +57,13 @@ class Challenge
      */
     private $image;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->image = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+//    /**
+//     * Constructor
+//     */
+//    public function __construct()
+//    {
+//        $this->image = new \Doctrine\Common\Collections\ArrayCollection();
+//    }
 
     /**
      * Get id
@@ -243,37 +243,61 @@ class Challenge
         return $this->dateCreation;
     }
 
+
     /**
-     * Add image
+     * Set image
      *
      * @param \CatchmeBundle\Entity\Image $image
      *
      * @return Challenge
      */
-    public function addImage(\CatchmeBundle\Entity\Image $image)
+    public function setImage(\CatchmeBundle\Entity\Image $image = null)
     {
-        $this->image[] = $image;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Remove image
-     *
-     * @param \CatchmeBundle\Entity\Image $image
-     */
-    public function removeImage(\CatchmeBundle\Entity\Image $image)
-    {
-        $this->image->removeElement($image);
-    }
-
-    /**
      * Get image
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \CatchmeBundle\Entity\Image
      */
     public function getImage()
     {
         return $this->image;
     }
+//    /**
+//     * Add image
+//     *
+//     * @param \CatchmeBundle\Entity\Image $image
+//     *
+//     * @return Challenge
+//     */
+//    public function addImage(\CatchmeBundle\Entity\Image $image)
+//    {
+//        $this->image[] = $image;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove image
+//     *
+//     * @param \CatchmeBundle\Entity\Image $image
+//     */
+//    public function removeImage(\CatchmeBundle\Entity\Image $image)
+//    {
+//        $this->image->removeElement($image);
+//    }
+//
+//    /**
+//     * Get image
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getImage()
+//    {
+//        return $this->image;
+//    }
 }

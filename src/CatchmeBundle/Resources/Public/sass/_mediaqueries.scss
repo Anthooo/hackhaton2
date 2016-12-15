@@ -17,6 +17,24 @@ and (orientation: portrait) {
   input[type=file] {
     width: 100%;
   }
+
+}
+
+//Iphone 5 landscape
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  .logo {
+    width: 15%;
+  }
+
+  .jumbotron {
+    margin-top: 2%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
 }
 
 //Iphone6

@@ -1,6 +1,6 @@
-catchme_user:
-    resource: "@CatchmeBundle/Resources/config/routing/user.yml"
-    prefix:   /user
+catchme_challenge:
+    resource: "@CatchmeBundle/Resources/config/routing/challenge.yml"
+    prefix:   /challenge
 
 catchme_homepage:
     path:     /

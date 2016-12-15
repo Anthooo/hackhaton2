@@ -9,11 +9,12 @@ CatchmeBundle\Entity\Image:
             generator:
                 strategy: AUTO
     fields:
-        alt:
-            type: string
-            length: 255
         url:
             type: text
+
+    manyToOne:
+        users:
+            targetEntity: CatchmeBundle\Entity\User
 
     lifecycleCallbacks:
         prePersist: [ preUpload ]

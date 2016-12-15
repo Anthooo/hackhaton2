@@ -22,7 +22,7 @@ class ChallengeController extends Controller
 
         $challenges = $em->getRepository('CatchmeBundle:Challenge')->findAll();
 
-        return $this->render('challenge/index.html.twig', array(
+        return $this->render('@Catchme/challenge/index.html.twig', array(
             'challenges' => $challenges,
         ));
     }
@@ -45,7 +45,7 @@ class ChallengeController extends Controller
             return $this->redirectToRoute('challenge_show', array('id' => $challenge->getId()));
         }
 
-        return $this->render('challenge/new.html.twig', array(
+        return $this->render('@Catchme/challenge/new.html.twig', array(
             'challenge' => $challenge,
             'form' => $form->createView(),
         ));
@@ -113,9 +113,7 @@ class ChallengeController extends Controller
   $latitudeCentreDecale = ($response['gps']['lat']-$randomFloatLat);
   $longitudeCentreDecale = ($response['gps']['lng']+$randomFloatLong);
 
-
-
-        return $this->render('challenge/show.html.twig', array(
+        return $this->render('@Catchme/challenge/show.html.twig', array(
             'challenge' => $challenge,
             'longitudeCentre' => $longitudeCentreDecale,
             'latitideCentre' => $latitudeCentreDecale,
@@ -145,7 +143,7 @@ class ChallengeController extends Controller
             return $this->redirectToRoute('challenge_edit', array('id' => $challenge->getId()));
         }
 
-        return $this->render('challenge/edit.html.twig', array(
+        return $this->render('@Catchme/challenge/edit.html.twig', array(
             'challenge' => $challenge,
             'edit_form' => $editForm->createView(),
 /*            'delete_form' => $deleteForm->createView(),*/

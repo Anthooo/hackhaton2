@@ -1,0 +1,37 @@
+CatchmeBundle\Entity\Challenge:
+    type: entity
+    table: null
+    repositoryClass: CatchmeBundle\Repository\ChallengeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '30'
+        description:
+            type: text
+            nullable: true
+        localisation:
+            type: string
+            length: '30'
+        longitude:
+            type: float
+        latitude:
+            type: float
+
+    manyToOne:
+        image:
+            targetEntity: CatchmeBundle\Entity\Image
+            mappedBy: challenges
+            cascade: ["persist", "remove"]
+
+    manyToMany:
+        users:
+            targetEntity: CatchmeBundle\Entity\User
+            mappedBy: challenges
+
+    lifecycleCallbacks: {  }

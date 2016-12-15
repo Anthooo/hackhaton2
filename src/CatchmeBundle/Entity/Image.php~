@@ -4,12 +4,15 @@ namespace CatchmeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Image
  */
 
 class Image
+
+
 {
     public function __toString()
     {
@@ -88,8 +91,7 @@ class Image
 
 
     /*---------------GENERATED CODE---------------------*/
-
-
+    
     /**
      * @var integer
      */
@@ -98,12 +100,12 @@ class Image
     /**
      * @var string
      */
-    private $alt;
+    private $url;
 
     /**
-     * @var string
+     * @var \CatchmeBundle\Entity\User
      */
-    private $url;
+    private $users;
 
 
     /**
@@ -114,30 +116,6 @@ class Image
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set alt
-     *
-     * @param string $alt
-     *
-     * @return Image
-     */
-    public function setAlt($alt)
-    {
-        $this->alt = $alt;
-
-        return $this;
-    }
-
-    /**
-     * Get alt
-     *
-     * @return string
-     */
-    public function getAlt()
-    {
-        return $this->alt;
     }
 
     /**
@@ -162,5 +140,29 @@ class Image
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \CatchmeBundle\Entity\User $users
+     *
+     * @return Image
+     */
+    public function setUsers(\CatchmeBundle\Entity\User $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \CatchmeBundle\Entity\User
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

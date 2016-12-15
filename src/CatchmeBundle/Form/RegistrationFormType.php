@@ -11,6 +11,7 @@
 
 namespace CatchmeBundle\Form;
 
+use CatchmeBundle\Entity\Group;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -20,9 +21,9 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            -> add('image', ImageType::class)
             -> add('nom')
             -> add('prenom')
+            -> add('image', ImageType::class)
         ;
     }
 

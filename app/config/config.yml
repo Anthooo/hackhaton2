@@ -75,6 +75,7 @@ fos_user:
     user_class: CatchmeBundle\Entity\User
     group:
         group_class: CatchmeBundle\Entity\Group
+
 #    registration:
 #            form:
 #                type: user.registration.form.type

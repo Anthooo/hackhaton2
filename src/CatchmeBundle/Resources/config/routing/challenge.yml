@@ -1,0 +1,24 @@
+challenge_index:
+    path:     /
+    defaults: { _controller: "CatchmeBundle:Challenge:index" }
+    methods:  GET
+
+challenge_show:
+    path:     /{id}/show
+    defaults: { _controller: "CatchmeBundle:Challenge:show" }
+    methods:  GET
+
+challenge_new:
+    path:     /new
+    defaults: { _controller: "CatchmeBundle:Challenge:new" }
+    methods:  [GET, POST]
+
+challenge_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CatchmeBundle:Challenge:edit" }
+    methods:  [GET, POST]
+
+challenge_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CatchmeBundle:Challenge:delete" }
+    methods:  DELETE

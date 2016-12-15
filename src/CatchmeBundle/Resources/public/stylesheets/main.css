@@ -21,19 +21,30 @@ h1 {
 }
 
 /* line 19, ../sass/_general.scss */
+.register {
+  margin-top: 0 !important;
+}
+
+/* line 23, ../sass/_general.scss */
 html {
   background: url("../images/back2.jpg") center fixed;
   background-size: cover;
 }
 
-/* line 24, ../sass/_general.scss */
+/* line 28, ../sass/_general.scss */
 body {
   background-color: transparent;
 }
 
-/* line 28, ../sass/_general.scss */
+/* line 32, ../sass/_general.scss */
 .classement {
   margin-top: 10%;
+}
+
+/* line 36, ../sass/_general.scss */
+.img-circle {
+  width: 140px;
+  height: 140px;
 }
 
 /* line 1, ../sass/_login.scss */

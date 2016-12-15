@@ -21,12 +21,17 @@ h1 {
 }
 
 /* line 19, ../sass/_general.scss */
-body {
-  background: url("../images/back2.jpg");
-  background-position: center;
+html {
+  background: url("../images/back2.jpg") center fixed;
+  background-size: cover;
 }
 
 /* line 24, ../sass/_general.scss */
+body {
+  background-color: transparent;
+}
+
+/* line 28, ../sass/_general.scss */
 .classement {
   margin-top: 10%;
 }
@@ -185,4 +190,52 @@ p {
 /* line 5, ../sass/_navbar.scss */
 .navbar-brand > img {
   width: 30%;
+}
+
+/* line 9, ../sass/_navbar.scss */
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* line 14, ../sass/_navbar.scss */
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+  border: transparent;
+}
+
+/* line 20, ../sass/_navbar.scss */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
+
+/* line 25, ../sass/_navbar.scss */
+.navbar-default .navbar-toggle {
+  border: transparent;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 7, ../sass/_mediaqueries.scss */
+  .card-container.card {
+    width: 100%;
+    padding: 15px 15px;
+  }
+
+  /* line 12, ../sass/_mediaqueries.scss */
+  .btn {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* line 17, ../sass/_mediaqueries.scss */
+  input[type=file] {
+    width: 100%;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 28, ../sass/_mediaqueries.scss */
+  .card-container.card {
+    width: 100%;
+    padding: 15px 15px;
+  }
 }

@@ -8,7 +8,7 @@ namespace CatchmeBundle\Entity;
 class Challenge
 {
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -37,16 +37,28 @@ class Challenge
      */
     private $latitude;
 
-
     /**
      * @var \CatchmeBundle\Entity\Image
      */
     private $image;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $users;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -173,7 +185,6 @@ class Challenge
         return $this->latitude;
     }
 
-
     /**
      * Set image
      *
@@ -181,7 +192,7 @@ class Challenge
      *
      * @return Challenge
      */
-    public function setImage(Image $image = null)
+    public function setImage(\CatchmeBundle\Entity\Image $image = null)
     {
         $this->image = $image;
 
@@ -197,5 +208,38 @@ class Challenge
     {
         return $this->image;
     }
-}
 
+    /**
+     * Add user
+     *
+     * @param \CatchmeBundle\Entity\User $user
+     *
+     * @return Challenge
+     */
+    public function addUser(\CatchmeBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \CatchmeBundle\Entity\User $user
+     */
+    public function removeUser(\CatchmeBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+}

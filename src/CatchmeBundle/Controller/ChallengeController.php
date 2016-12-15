@@ -57,11 +57,12 @@ class ChallengeController extends Controller
      */
     public function showAction(Challenge $challenge)
     {
-        $deleteForm = $this->createDeleteForm($challenge);
+/*        $deleteForm = $this->createDeleteForm($challenge);*/
 
         return $this->render('challenge/show.html.twig', array(
             'challenge' => $challenge,
-            'delete_form' => $deleteForm->createView(),
+//            'image'=> $challenge->getImages(),
+/*            'delete_form' => $deleteForm->createView(),*/
         ));
     }
 
@@ -72,15 +73,15 @@ class ChallengeController extends Controller
     public function editAction(Request $request, Challenge $challenge)
     {
         $em = $this->getDoctrine()->getManager();
-        $image = $em->getRepository('CatchmeBundle:Image')->findOneById($modele->getImage()->getId());
-        $deleteForm = $this->createDeleteForm($challenge);
+        $image = $em->getRepository('CatchmeBundle:Image')->findOneById($challenge->getImage()->getId());
+/*        $deleteForm = $this->createDeleteForm($challenge);*/
         $editForm = $this->createForm('CatchmeBundle\Form\ChallengeType', $challenge);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $image->preUpload();
-            $em->persist($modele);
+            $em->persist($challenge);
             $em->flush();
 
             return $this->redirectToRoute('challenge_edit', array('id' => $challenge->getId()));
@@ -89,7 +90,7 @@ class ChallengeController extends Controller
         return $this->render('challenge/edit.html.twig', array(
             'challenge' => $challenge,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+/*            'delete_form' => $deleteForm->createView(),*/
         ));
     }
 

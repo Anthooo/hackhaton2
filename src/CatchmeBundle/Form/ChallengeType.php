@@ -24,12 +24,6 @@ class ChallengeType extends AbstractType
         ;
     }
 
-    public function __construct()
-
-    {
-        $this->image = new ArrayCollection();
-
-    }
     /**
      * {@inheritdoc}
      */

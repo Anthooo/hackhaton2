@@ -22,15 +22,16 @@ CatchmeBundle\Entity\Challenge:
             type: float
         latitude:
             type: float
+
+    manyToOne:
+        image:
+            targetEntity: CatchmeBundle\Entity\Image
+            mappedBy: challenges
+            cascade: ["persist", "remove"]
+
     manyToMany:
-            image:
-                targetEntity: CatchmeBundle\Entity\Image
-                joinTable:
-                  name: images_challenges
-                  joinColumns:
-                    images_id:
-                      referencedColumnName: id
-                  inverseJoinColumns:
-                    challenges_id:
-                      referencedColumnName: id
+        users:
+            targetEntity: CatchmeBundle\Entity\User
+            mappedBy: challenges
+
     lifecycleCallbacks: {  }

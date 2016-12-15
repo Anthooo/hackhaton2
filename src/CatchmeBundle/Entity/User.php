@@ -27,7 +27,7 @@ class User extends BaseUser
     /**
      * @var integer
      */
-    private $score;
+    private $score = 0;
 
     /**
      * @var \CatchmeBundle\Entity\Image

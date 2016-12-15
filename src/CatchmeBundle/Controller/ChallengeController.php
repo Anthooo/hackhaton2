@@ -5,6 +5,7 @@ namespace CatchmeBundle\Controller;
 use CatchmeBundle\Entity\Challenge;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use CatchmeBundle\Entity\User;
 
 /**
  * Challenge controller.
@@ -31,14 +32,20 @@ class ChallengeController extends Controller
      * Creates a new challenge entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request )
     {
         $challenge = new Challenge();
         $form = $this->createForm('CatchmeBundle\Form\ChallengeType', $challenge);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user= $this->get('security.token_storage')->getToken()->getUser();
+
             $em = $this->getDoctrine()->getManager();
+            $em->persist($challenge);
+            $em->flush($challenge);
+            $challenge->setUserCreateur($user);
+            $challenge->setUserMeneur($user);
             $em->persist($challenge);
             $em->flush($challenge);
 

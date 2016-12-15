@@ -4,7 +4,7 @@
     {% include '@Catchme/Include/navbar2.html.twig' %}
 
 <div class="container">
-    <div class="jumbotron">{% block body %}
+    <div class="jumbotron">
     <h1>Challenge creation</h1>
 
     {{ form_start(form) }}
@@ -14,7 +14,9 @@
 
     <ul>
         <li>
-            <a href="{{ path('challenge_index') }}">Back to the list</a>
+            <a href="{{ path('challenge_index') }}">Retour</a>
         </li>
     </ul>
+    </div>
+</div>
 {% endblock %}

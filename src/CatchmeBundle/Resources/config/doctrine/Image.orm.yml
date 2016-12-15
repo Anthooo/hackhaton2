@@ -11,10 +11,19 @@ CatchmeBundle\Entity\Image:
     fields:
         url:
             type: text
+        validee:
+            type: boolean
+            nullable: true
+
+
+
 
     manyToOne:
         users:
             targetEntity: CatchmeBundle\Entity\User
+        challenge:
+            targetEntity: CatchmeBundle\Entity\Challenge
+            inversedBy: challenge
 
     lifecycleCallbacks:
         prePersist: [ preUpload ]

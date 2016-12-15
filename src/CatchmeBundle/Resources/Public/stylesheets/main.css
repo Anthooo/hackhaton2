@@ -1,151 +1,185 @@
-/* line 1, ../sass/_login.scss */
-html, body {
-  position: relative;
-  height: 100%;
-}
-
-/* line 6, ../sass/_login.scss */
-.login-container {
-  position: relative;
-  width: 300px;
-  margin: 80px auto;
-  padding: 20px 40px 40px;
+/* line 1, ../sass/_general.scss */
+h1 {
   text-align: center;
-  background: #fff;
-  border: 1px solid #ccc;
 }
 
-/* line 16, ../sass/_login.scss */
-#output {
-  position: absolute;
-  width: 300px;
-  top: -75px;
-  left: 0;
-  color: #fff;
+/* line 5, ../sass/_general.scss */
+.profile {
+  color: black;
 }
 
-/* line 24, ../sass/_login.scss */
-#output.alert-success {
-  background: #19cc19;
+/* line 9, ../sass/_general.scss */
+.jumbotron p {
+  color: dimgrey;
+  text-align: center;
 }
 
-/* line 28, ../sass/_login.scss */
-#output.alert-danger {
-  background: #e46969;
+/* line 14, ../sass/_general.scss */
+.jumbotron {
+  background-color: RGBA(238, 238, 238, 0.8);
+  margin-top: 15%;
 }
 
-/* line 33, ../sass/_login.scss */
-.remember {
-  margin-top: 15px;
-}
-
-/* line 37, ../sass/_login.scss */
-.login-container::before, .login-container::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 3.5px;
-  left: 0;
-  background: #fff;
-  z-index: -1;
-  -webkit-transform: rotateZ(4deg);
-  -moz-transform: rotateZ(4deg);
-  -ms-transform: rotateZ(4deg);
-  border: 1px solid #ccc;
-}
-
-/* line 51, ../sass/_login.scss */
-.login-container::after {
-  top: 5px;
-  z-index: -2;
-  -webkit-transform: rotateZ(-2deg);
-  -moz-transform: rotateZ(-2deg);
-  -ms-transform: rotateZ(-2deg);
-}
-
-/* line 60, ../sass/_login.scss */
-.avatar {
-  width: 100px;
-  height: 100px;
-  margin: 10px auto 30px;
-  border-radius: 100%;
-  border: 2px solid #aaa;
+/* line 19, ../sass/_general.scss */
+html {
+  background: url("../images/back2.jpg") center fixed;
   background-size: cover;
 }
 
-/* line 68, ../sass/_login.scss */
-.form-box input {
-  width: 100%;
-  padding: 10px;
+/* line 24, ../sass/_general.scss */
+body {
+  background-color: transparent;
+}
+
+/* line 28, ../sass/_general.scss */
+.classement {
+  margin-top: 10%;
+}
+
+/* line 1, ../sass/_login.scss */
+h2 {
+  color: white;
+}
+
+/* line 2, ../sass/_login.scss */
+p {
+  color: white;
+}
+
+/* line 4, ../sass/_login.scss */
+.card-container.card {
+  width: 80%;
+  padding: 40px 40px;
+}
+
+/* line 9, ../sass/_login.scss */
+.login .btn {
+  font-weight: 700;
+  height: 36px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+/*
+ * Card component
+ */
+/* line 21, ../sass/_login.scss */
+.card {
+  background-color: RGBA(238, 238, 238, 0.8);
+  /* just in case there no content*/
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 36, ../sass/_login.scss */
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+/* line 49, ../sass/_login.scss */
+.profile-name-card {
+  font-size: 16px;
+  font-weight: bold;
   text-align: center;
-  height: 40px;
-  border: 1px solid #ccc;
-  transition: 0.2s ease-in-out;
+  margin: 10px 0 0;
+  min-height: 1em;
 }
 
-/* line 77, ../sass/_login.scss */
-.form-box input:focus {
+/* line 57, ../sass/_login.scss */
+.reauth-email {
+  display: block;
+  color: #404040;
+  line-height: 2;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 72, ../sass/_login.scss */
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+  direction: ltr;
+  height: 44px;
+  font-size: 16px;
+}
+
+/* line 79, ../sass/_login.scss */
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 93, ../sass/_login.scss */
+.form-signin .form-control:focus {
+  border-color: #6891a2;
   outline: 0;
-  background: #eee;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6891a2;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6891a2;
 }
 
-/* line 82, ../sass/_login.scss */
-.form-box input[type="text"] {
-  border-radius: 5px 5px 0 0;
-  text-transform: lowercase;
+/* line 100, ../sass/_login.scss */
+.btn.btn-signin {
+  /*background-color: #4d90fe; */
+  /*background-color: rgb(104, 145, 162);
+  / background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+  padding: 0px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
 }
 
-/* line 87, ../sass/_login.scss */
-.form-box input[type="password"] {
-  border-radius: 0 0 5px 5px;
-  border-top: 0;
+/* line 119, ../sass/_login.scss */
+.forgot-password {
+  color: #6891a2;
 }
 
-/* line 92, ../sass/_login.scss */
-.form-box button.login {
-  margin-top: 15px;
-  padding: 10px 20px;
-}
-
-/* line 97, ../sass/_login.scss */
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-/* line 134, ../sass/_login.scss */
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
+/* line 123, ../sass/_login.scss */
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus {
+  color: #0c6121;
 }
 
 /* line 1, ../sass/_navbar.scss */
@@ -156,4 +190,65 @@ html, body {
 /* line 5, ../sass/_navbar.scss */
 .navbar-brand > img {
   width: 30%;
+}
+
+/* line 9, ../sass/_navbar.scss */
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* line 14, ../sass/_navbar.scss */
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+  border: transparent;
+}
+
+/* line 20, ../sass/_navbar.scss */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
+
+/* line 25, ../sass/_navbar.scss */
+.navbar-default .navbar-toggle {
+  border: transparent;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 7, ../sass/_mediaqueries.scss */
+  .card-container.card {
+    width: 100%;
+    padding: 15px 15px;
+  }
+
+  /* line 12, ../sass/_mediaqueries.scss */
+  .btn {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* line 17, ../sass/_mediaqueries.scss */
+  input[type=file] {
+    width: 100%;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  /* line 29, ../sass/_mediaqueries.scss */
+  .logo {
+    width: 15%;
+  }
+
+  /* line 33, ../sass/_mediaqueries.scss */
+  .jumbotron {
+    margin-top: 2%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 46, ../sass/_mediaqueries.scss */
+  .card-container.card {
+    width: 100%;
+    padding: 15px 15px;
+  }
 }

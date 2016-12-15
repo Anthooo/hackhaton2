@@ -1,92 +1,45 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-    {% include '@Catchme/Include/navbar.html.twig' %}
-
-
-{% block fos_user_content %}
-{% if error %}
-    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
-{% endif %}
+    {% include '@Catchme/Include/navbar1.html.twig' %}
 
 
-    <div class="container">
-        <div class="login-container">
-            <div id="output"></div>
-            <div class="avatar"></div>
-            <div class="form-box">
-                <form action="{{ path("fos_user_security_check") }}" method="post">
+
+
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Se connecter</h1>
+
+                {% block fos_user_content %}
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">{{ error|trans({}, 'FOSUserBundle') }}</div>
+                {% endif %}
+
+                {#<img id="profile-img" class="profile-img-card" src="{{ asset('bundles/catchme/images/catchMe.png') }}" />#}
+                <p id="profile-name" class="profile-name-card"></p>
+                <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-                    {#<label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>#}
-                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Nom d'utilisateur"/>
-
-                    {#<label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>#}
-                    <input type="password" id="password" name="_password" required="required" placeholder="Mot de passe"/>
-
-                    <div class="row">
-                        <div class="col-md-2">
-                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                        </div>
-                        <div class="col-md-10">
-                            <label class="remember" for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-                        </div>
+                    <div class="form-group">
+                        <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                        <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required"/>
                     </div>
 
-                    <input class="btn btn-info btn-block login" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                    <div class="form-group">
+                        <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                        <input class="form-control" type="password" id="password" name="_password" required="required"/>
+                    </div>
+
+
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+
+                    <label class="remember" for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+
+                    <input class="btn btn-primary btn-lg center-block login" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
                 </form>
             </div>
         </div>
-
-    </div>
-
-{% endblock fos_user_content %}
-
-{% endblock %}
-
-{% block javascripts %}
-
-<script>
-$(function(){
-var textfield = $("input[name=user]");
-$('button[type="submit"]').click(function(e) {
-e.preventDefault();
-//little validation just to check username
-if (textfield.val() != "") {
-//$("body").scrollTo("#output");
-$("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
-$("#output").removeClass(' alert-danger');
-$("input").css({
-"height":"0",
-"padding":"0",
-"margin":"0",
-"opacity":"0"
-});
-//change button text
-$('button[type="submit"]').html("continue")
-.removeClass("btn-info")
-.addClass("btn-default").click(function(){
-$("input").css({
-"height":"auto",
-"padding":"10px",
-"opacity":"1"
-}).val("");
-});
-
-//show avatar
-$(".avatar").css({
-"background-image": "url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRL1uzmgyrfPwUC7UwnOFHFtkAhQrAUYufbLzWvOt9N8pRt1zlV')"
-});
-} else {
-//remove success mesage replaced with error message
-$("#output").removeClass(' alert alert-success');
-$("#output").addClass("alert alert-danger animated fadeInUp").html("sorry enter a username ");
-}
-//console.log(textfield.val());
-
-});
-});
-</script>
+    {% endblock fos_user_content %}
 
 {% endblock %}

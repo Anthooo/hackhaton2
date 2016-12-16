@@ -12,7 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
-    
+
+
     /**
      * @var string
      */
@@ -26,12 +27,17 @@ class User extends BaseUser
     /**
      * @var integer
      */
-    private $score;
+    private $score = 0;
 
     /**
      * @var \CatchmeBundle\Entity\Image
      */
     private $image;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $challenges;
 
 
     /**
@@ -50,7 +56,7 @@ class User extends BaseUser
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
@@ -73,7 +79,7 @@ class User extends BaseUser
     /**
      * Get prenom
      *
-     * @return string 
+     * @return string
      */
     public function getPrenom()
     {
@@ -96,7 +102,7 @@ class User extends BaseUser
     /**
      * Get score
      *
-     * @return integer 
+     * @return integer
      */
     public function getScore()
     {
@@ -119,10 +125,43 @@ class User extends BaseUser
     /**
      * Get image
      *
-     * @return \CatchmeBundle\Entity\Image 
+     * @return \CatchmeBundle\Entity\Image
      */
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Add challenges
+     *
+     * @param \CatchmeBundle\Entity\Challenge $challenges
+     * @return User
+     */
+    public function addChallenge(\CatchmeBundle\Entity\Challenge $challenges)
+    {
+        $this->challenges[] = $challenges;
+
+        return $this;
+    }
+
+    /**
+     * Remove challenges
+     *
+     * @param \CatchmeBundle\Entity\Challenge $challenges
+     */
+    public function removeChallenge(\CatchmeBundle\Entity\Challenge $challenges)
+    {
+        $this->challenges->removeElement($challenges);
+    }
+
+    /**
+     * Get challenges
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChallenges()
+    {
+        return $this->challenges;
     }
 }

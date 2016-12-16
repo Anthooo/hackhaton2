@@ -53,7 +53,7 @@
     </p>
 
     {# Affichage de la Zone de recherche #}
-    <div>
+    <div class="container">
         <h3>Votre zone de recherche</h3>
         <div id="map" style="width: 500px; height: 500px;"></div>
     </div>
@@ -61,7 +61,28 @@
     </div>
 </div>
 
+    <div class="container">
+        <div class="jumbotron register">
+            <h1>C'est parti ?</h1>
 
+            <h2>{{ challenge.nom }}</h2>
+
+            <p>Catch me if you can !</p>
+
+            <div class="center-block">
+                <a class="thumbnail fancybox" rel="ligthbox" href="{{ asset('uploads/images/') }}{{ challenge.image }}">
+                    <img class="img-responsive img-circle" alt="" src="{{ asset('uploads/images/') }}{{ challenge.image }}" />
+                </a>
+
+            </div>
+
+            <p>
+                <a class="btn btn-primary" href="{{ path('challenge_validation', { 'id': challenge.id }) }}">J'ai trouvé !</a>
+
+                <a class="btn btn-primary" href="{{ path('challenge_index') }}">Retour à la liste</a>
+            </p>
+        </div>
+    </div>
 <script>
             function initMap() {
                 var latDe = {{ latitudeCentre }};
@@ -95,9 +116,4 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAr10cIoZKJLUnRzAcZQmd9rFNSjRmWLCk&callback=initMap"
                 async defer></script>
-
-
-
-{% endblock body %}
-
-
+{% endblock %}

@@ -7,7 +7,10 @@ namespace CatchmeBundle\Entity;
  */
 class Challenge
 {
+
 //    GENERATE CODE
+
+
 
     /**
      * @var integer
@@ -45,6 +48,16 @@ class Challenge
     private $image;
 
     /**
+     * @var \CatchmeBundle\Entity\User
+     */
+    private $user_meneur;
+
+    /**
+     * @var \CatchmeBundle\Entity\User
+     */
+    private $user_createur;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $users;
@@ -60,7 +73,7 @@ class Challenge
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -71,7 +84,6 @@ class Challenge
      * Set nom
      *
      * @param string $nom
-     *
      * @return Challenge
      */
     public function setNom($nom)
@@ -84,7 +96,7 @@ class Challenge
     /**
      * Get nom
      *
-     * @return string
+     * @return string 
      */
     public function getNom()
     {
@@ -95,7 +107,6 @@ class Challenge
      * Set description
      *
      * @param string $description
-     *
      * @return Challenge
      */
     public function setDescription($description)
@@ -108,7 +119,7 @@ class Challenge
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
@@ -119,7 +130,6 @@ class Challenge
      * Set localisation
      *
      * @param string $localisation
-     *
      * @return Challenge
      */
     public function setLocalisation($localisation)
@@ -132,7 +142,7 @@ class Challenge
     /**
      * Get localisation
      *
-     * @return string
+     * @return string 
      */
     public function getLocalisation()
     {
@@ -143,7 +153,6 @@ class Challenge
      * Set longitude
      *
      * @param float $longitude
-     *
      * @return Challenge
      */
     public function setLongitude($longitude)
@@ -156,7 +165,7 @@ class Challenge
     /**
      * Get longitude
      *
-     * @return float
+     * @return float 
      */
     public function getLongitude()
     {
@@ -167,7 +176,6 @@ class Challenge
      * Set latitude
      *
      * @param float $latitude
-     *
      * @return Challenge
      */
     public function setLatitude($latitude)
@@ -180,7 +188,7 @@ class Challenge
     /**
      * Get latitude
      *
-     * @return float
+     * @return float 
      */
     public function getLatitude()
     {
@@ -191,7 +199,6 @@ class Challenge
      * Set image
      *
      * @param \CatchmeBundle\Entity\Image $image
-     *
      * @return Challenge
      */
     public function setImage(\CatchmeBundle\Entity\Image $image = null)
@@ -204,7 +211,7 @@ class Challenge
     /**
      * Get image
      *
-     * @return \CatchmeBundle\Entity\Image
+     * @return \CatchmeBundle\Entity\Image 
      */
     public function getImage()
     {
@@ -212,33 +219,78 @@ class Challenge
     }
 
     /**
-     * Add user
+     * Set user_meneur
      *
-     * @param \CatchmeBundle\Entity\User $user
-     *
+     * @param \CatchmeBundle\Entity\User $userMeneur
      * @return Challenge
      */
-    public function addUser(\CatchmeBundle\Entity\User $user)
+    public function setUserMeneur(\CatchmeBundle\Entity\User $userMeneur = null)
     {
-        $this->users[] = $user;
+        $this->user_meneur = $userMeneur;
 
         return $this;
     }
 
     /**
-     * Remove user
+     * Get user_meneur
      *
-     * @param \CatchmeBundle\Entity\User $user
+     * @return \CatchmeBundle\Entity\User 
      */
-    public function removeUser(\CatchmeBundle\Entity\User $user)
+    public function getUserMeneur()
     {
-        $this->users->removeElement($user);
+        return $this->user_meneur;
+    }
+
+    /**
+     * Set user_createur
+     *
+     * @param \CatchmeBundle\Entity\User $userCreateur
+     * @return Challenge
+     */
+    public function setUserCreateur(\CatchmeBundle\Entity\User $userCreateur = null)
+    {
+        $this->user_createur = $userCreateur;
+
+        return $this;
+    }
+
+    /**
+     * Get user_createur
+     *
+     * @return \CatchmeBundle\Entity\User 
+     */
+    public function getUserCreateur()
+    {
+        return $this->user_createur;
+    }
+
+    /**
+     * Add users
+     *
+     * @param \CatchmeBundle\Entity\User $users
+     * @return Challenge
+     */
+    public function addUser(\CatchmeBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \CatchmeBundle\Entity\User $users
+     */
+    public function removeUser(\CatchmeBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
     }
 
     /**
      * Get users
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getUsers()
     {

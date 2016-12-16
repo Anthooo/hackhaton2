@@ -92,6 +92,7 @@ class Image
 
     /*---------------GENERATED CODE---------------------*/
     
+
     /**
      * @var integer
      */
@@ -103,15 +104,25 @@ class Image
     private $url;
 
     /**
+     * @var boolean
+     */
+    private $validee;
+
+    /**
      * @var \CatchmeBundle\Entity\User
      */
     private $users;
+
+    /**
+     * @var \CatchmeBundle\Entity\Challenge
+     */
+    private $challenge;
 
 
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -122,7 +133,6 @@ class Image
      * Set url
      *
      * @param string $url
-     *
      * @return Image
      */
     public function setUrl($url)
@@ -135,7 +145,7 @@ class Image
     /**
      * Get url
      *
-     * @return string
+     * @return string 
      */
     public function getUrl()
     {
@@ -143,10 +153,32 @@ class Image
     }
 
     /**
+     * Set validee
+     *
+     * @param boolean $validee
+     * @return Image
+     */
+    public function setValidee($validee)
+    {
+        $this->validee = $validee;
+
+        return $this;
+    }
+
+    /**
+     * Get validee
+     *
+     * @return boolean 
+     */
+    public function getValidee()
+    {
+        return $this->validee;
+    }
+
+    /**
      * Set users
      *
      * @param \CatchmeBundle\Entity\User $users
-     *
      * @return Image
      */
     public function setUsers(\CatchmeBundle\Entity\User $users = null)
@@ -159,10 +191,33 @@ class Image
     /**
      * Get users
      *
-     * @return \CatchmeBundle\Entity\User
+     * @return \CatchmeBundle\Entity\User 
      */
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Set challenge
+     *
+     * @param \CatchmeBundle\Entity\Challenge $challenge
+     * @return Image
+     */
+    public function setChallenge(\CatchmeBundle\Entity\Challenge $challenge = null)
+    {
+        $this->challenge = $challenge;
+
+        return $this;
+    }
+
+    /**
+     * Get challenge
+     *
+     * @return \CatchmeBundle\Entity\Challenge 
+     */
+    public function getChallenge()
+    {
+        return $this->challenge;
     }
 }

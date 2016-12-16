@@ -28,6 +28,10 @@ CatchmeBundle\Entity\Challenge:
             targetEntity: CatchmeBundle\Entity\Image
             mappedBy: challenges
             cascade: ["persist", "remove"]
+        user_meneur:
+            targetEntity: CatchmeBundle\Entity\User
+        user_createur:
+            targetEntity: CatchmeBundle\Entity\User
 
     manyToMany:
         users:

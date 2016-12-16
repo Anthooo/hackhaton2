@@ -21,11 +21,13 @@ CatchmeBundle\Entity\User:
     manyToOne:
         image:
             targetEntity: CatchmeBundle\Entity\Image
+            nullable: true
             cascade: ["persist", "remove"]
 
     manyToMany:
         challenges:
             targetEntity: CatchmeBundle\Entity\Challenge
+            nullable: true
             inversedBy: users
             joinColumns:
                 name: group_challenge

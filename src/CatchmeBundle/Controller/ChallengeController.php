@@ -44,6 +44,37 @@ class ChallengeController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($challenge);
             $em->flush($challenge);
+            // Début récupération GPS image
+            $nomImage = $challenge->getImage()->getUrl();
+            $chemin = ('../web/uploads/images/' . $nomImage);
+            $exif = exif_read_data($chemin);
+            if(array_key_exists('GPSLongitude', $exif) && array_key_exists('GPSLatitude', $exif)) {
+                $lng = $this->getGps($exif["GPSLongitude"], $exif['GPSLongitudeRef']);
+                $lat = $this->getGps($exif["GPSLatitude"], $exif['GPSLatitudeRef']);
+                $response = array(
+                    "status" => "success",
+                    "reason" => "",
+                    "gps" => array(
+                        "lat" => $lat,
+                        "lng" => $lng
+                    ),
+                );
+            }
+            else {
+                $response = array(
+                    "status" => "fail",
+                    "reason" => "The uploaded picture does not have GPS information.",
+                    "exif" => $exif
+                );
+            }
+
+            // Isole lat et long de la photo
+            $latitudePhoto = ($response['gps']['lat']);
+            $longitudePhoto = ($response['gps']['lng']);
+            // Affectation valeur dans $challenge
+            $challenge->setLatitude($latitudePhoto);
+            $challenge->setLongitude($longitudePhoto);
+            // Fin récupération GPS image
             $challenge->setUserCreateur($user);
             $challenge->setUserMeneur($user);
             $em->persist($challenge);

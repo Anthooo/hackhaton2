@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    {#{% include '@Catchme/Include/navbar2.html.twig' %}#}
+    {% include '@Catchme/Include/navbar2.html.twig' %}
 
 
     <div class="container">
@@ -10,7 +10,22 @@
 
             {{ form_start(form) }}
 
-            {{ form_widget(form) }}
+            {{ form_label(form.nom) }}
+            {{ form_widget(form.nom) }}
+
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+
+            {{ form_label(form.localisation) }}
+            {{ form_widget(form.localisation) }}
+
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image) }}
+
+            <div class="hidden">
+                {{ form_widget (form.longitude) }}
+                {{ form_widget (form.latitude) }}
+            </div>
 
 
             <input class="btn btn-primary" type="submit" value="Je suis sûr de moi" /> <a class="btn btn-primary" href="{{ path('challenge_index') }}">Envie d'un autre challenge ?</a>

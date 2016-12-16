@@ -1,0 +1,24 @@
+CatchmeBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: CatchmeBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        thread:
+            targetEntity: CatchmeBundle\Entity\Thread
+            inversedBy: messages
+        sender:
+            targetEntity: CatchmeBundle\Entity\User
+
+    oneToMany:
+        metadata:
+            targetEntity: CatchmeBundle\Entity\MessageMetadata
+            mappedBy: message
+            cascade: [ "all" ]
+

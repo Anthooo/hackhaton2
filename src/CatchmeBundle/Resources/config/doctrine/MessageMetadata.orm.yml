@@ -1,0 +1,17 @@
+CatchmeBundle\Entity\MessageMetadata:
+    type: entity
+    table: null
+    repositoryClass: CatchmeBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        message:
+            targetEntity: CatchmeBundle\Entity\Message
+            inversedBy: metadata
+        participant:
+            targetEntity: CatchmeBundle\Entity\User

@@ -1,0 +1,23 @@
+CatchmeBundle\Entity\Thread:
+    type: entity
+    table: null
+    repositoryClass: CatchmeBundle\Repository\ThreadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        createdBy:
+            targetEntity: CatchmeBundle\Entity\User
+
+    oneToMany:
+        messages:
+            targetEntity: CatchmeBundle\Entity\Message
+            mappedBy: thread
+        metadata:
+            targetEntity: CatchmeBundle\Entity\ThreadMetadata
+            mappedBy: thread
+            cascade: [ "all" ]

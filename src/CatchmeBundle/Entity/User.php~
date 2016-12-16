@@ -5,12 +5,13 @@ namespace CatchmeBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Model\ParticipantInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
 
 
@@ -27,7 +28,11 @@ class User extends BaseUser
     /**
      * @var integer
      */
+<<<<<<< HEAD
+    private $score;
+=======
     private $score = 0;
+>>>>>>> 82d3231be402b150155a8b15e00f65a8c3e8d1ae
 
     /**
      * @var \CatchmeBundle\Entity\Image

@@ -76,6 +76,7 @@ fos_user:
     group:
         group_class: CatchmeBundle\Entity\Group
 
-#    registration:
-#            form:
-#                type: user.registration.form.type
+fos_message:
+    db_driver: orm
+    thread_class: CatchmeBundle\Entity\Thread
+    message_class: CatchmeBundle\Entity\Message

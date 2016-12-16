@@ -3,6 +3,7 @@
 namespace CatchmeBundle\Controller;
 
 use CatchmeBundle\Entity\Challenge;
+use CatchmeBundle\Entity\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use CatchmeBundle\Entity\User;
@@ -163,8 +164,19 @@ class ChallengeController extends Controller
         $form = $this->createForm('CatchmeBundle\Form\ChallengeType', $challenge);
         $form->handleRequest($request);
 
+        $clyde = "test";
+        $composer = $this->container->get('fos_message.composer');
+
+        $messages = $composer->newThread()
+            ->setSender($this->getUser($clyde))
+            ->addRecipient($this->getUser($challenge->getUserCreateur()))
+            ->setSubject('Hi there')
+            ->setBody('This is a test message')
+            ->getMessage();
+
         return $this->render('@Catchme/challenge/validation.html.twig', array(
             'challenges' => $challenge,
+            'message' => $messages,
             'form' => $form->createView(),
         ));
     }

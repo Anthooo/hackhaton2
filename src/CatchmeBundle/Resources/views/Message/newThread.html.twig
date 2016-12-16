@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% include '@Catchme/Include/navbar2.html.twig' %}
+
+    <div class="container">
+        <div class="jumbotron register">
+            {% block fos_message_content %}
+
+                <h2>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+
+                <form action="{{ url('fos_message_thread_new') }}" method="post">
+                    {{ form_widget(form) }}
+
+                    <input type="submit" />
+                </form>
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

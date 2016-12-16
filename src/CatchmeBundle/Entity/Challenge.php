@@ -8,6 +8,10 @@ namespace CatchmeBundle\Entity;
 class Challenge
 {
 
+//    GENERATE CODE
+
+
+
     /**
      * @var integer
      */

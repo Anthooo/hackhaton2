@@ -18,8 +18,8 @@ class ChallengeType extends AbstractType
             ->add('nom')
             ->add('description')
             ->add('localisation')
-            ->add('longitude')
-            ->add('latitude')
+//            ->add('longitude')
+//            ->add('latitude')
             ->add('image', ImageType::class)
         ;
     }

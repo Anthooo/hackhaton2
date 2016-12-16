@@ -15,9 +15,6 @@ CatchmeBundle\Entity\Image:
             type: boolean
             nullable: true
 
-
-
-
     manyToOne:
         users:
             targetEntity: CatchmeBundle\Entity\User

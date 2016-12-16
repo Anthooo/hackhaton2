@@ -2,6 +2,3 @@ catchme:
     resource: "@CatchmeBundle/Resources/config/routing.yml"
     prefix:   /
 
-fos_message:
-    resource: "@FOSMessageBundle/Resources/config/routing.xml"
-    prefix: /optional_routing_prefix

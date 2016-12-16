@@ -35,12 +35,12 @@ class Challenge
     /**
      * @var float
      */
-    private $longitude;
+    private $longitude = 0;
 
     /**
      * @var float
      */
-    private $latitude;
+    private $latitude = 0;
 
     /**
      * @var \CatchmeBundle\Entity\Image

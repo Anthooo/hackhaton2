@@ -20,10 +20,10 @@
             </div>
 
             {# Affichage de la Zone de recherche #}
-    <div class="container center">
-        <h3>Votre zone de recherche</h3>
-        <div id="map" style="width: 500px; height: 500px; margin-bottom: 25px;"></div>
-    </div>
+            <div class="map">
+                <h3>Votre zone de recherche</h3>
+                <div id="map" class="center-block"></div>
+            </div>
 
             <p>
                 <a class="btn btn-primary" href="{{ path('challenge_validation', { 'id': challenge.id }) }}">J'ai trouvé !</a>
@@ -32,38 +32,47 @@
             </p>
         </div>
     </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+
     {# Javascript gérant l'affichage de la map zone de recherche #}
+
     <script>
-            function initMap() {
-                var latDe = {{ latitudeCentre }};
-                var longDe = {{ longitudeCentre }};
-                var latLong = {lat: latDe, lng: longDe};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 14,
-                    center: latLong
-                });
-                var contentString =
-                    '<div id="content">' +
+    function initMap() {
+        var latDe = {{ latitudeCentre }};
+        var longDe = {{ longitudeCentre }};
+        var latLong = {lat: latDe, lng: longDe};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: latLong
+        });
+        var contentString =
+            '<div id="content">' +
 
-                    '</div>';
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
+            '</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
 
 
-                var optionsCercle = {
-                      map: map,
-                      center: map.getCenter(),
-                      radius: 800,
-                      strokeColor: "#d5a3ff",
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: "purple",
-                        fillOpacity: 0.35
-                };
-                var monCercle = new google.maps.Circle(optionsCercle);
-            }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAr10cIoZKJLUnRzAcZQmd9rFNSjRmWLCk&callback=initMap"
-                async defer></script>
+        var optionsCercle = {
+            map: map,
+            center: map.getCenter(),
+            radius: 800,
+            strokeColor: "#337AB7",
+            strokeOpacity: 0.8,
+            strokeWeight: 1,
+            fillColor: "blue",
+            fillOpacity: 0.35
+        };
+        var monCercle = new google.maps.Circle(optionsCercle);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAr10cIoZKJLUnRzAcZQmd9rFNSjRmWLCk&callback=initMap"
+        async defer></script>
+
 {% endblock %}

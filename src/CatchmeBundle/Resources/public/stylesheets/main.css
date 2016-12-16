@@ -242,14 +242,20 @@ p {
   input[type=file] {
     width: 100%;
   }
+
+  /* line 21, ../sass/_mediaqueries.scss */
+  #map {
+    width: 250px !important;
+    height: 250px !important;
+  }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  /* line 29, ../sass/_mediaqueries.scss */
+  /* line 34, ../sass/_mediaqueries.scss */
   .logo {
     width: 15%;
   }
 
-  /* line 33, ../sass/_mediaqueries.scss */
+  /* line 38, ../sass/_mediaqueries.scss */
   .jumbotron {
     margin-top: 2%;
     padding-top: 20px;
@@ -257,10 +263,16 @@ p {
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  /* line 46, ../sass/_mediaqueries.scss */
+  /* line 51, ../sass/_mediaqueries.scss */
   .card-container.card {
     width: 100%;
     padding: 15px 15px;
+  }
+
+  /* line 56, ../sass/_mediaqueries.scss */
+  #map {
+    width: 300px !important;
+    height: 300px !important;
   }
 }
 /* line 1, ../sass/_challenge.scss */
@@ -284,5 +296,17 @@ p {
 h2 {
   font-size: 45px;
   color: #0E50A6;
+  text-align: center;
+}
+
+/* line 21, ../sass/_challenge.scss */
+#map {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 25px;
+}
+
+/* line 27, ../sass/_challenge.scss */
+.map {
   text-align: center;
 }

@@ -1,7 +1,7 @@
 <?php
-// src/AppBundle/Entity/Message.php
+// src/CatchmeBundle/Entity/Message.php
 
-namespace AppBundle\Entity;
+namespace CatchmeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;

@@ -1,7 +1,7 @@
 <?php
-// src/AppBundle/Entity/ThreadMetadata.php
+// src/CatchmeBundle/Entity/ThreadMetadata.php
 
-namespace AppBundle\Entity;
+namespace CatchmeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;

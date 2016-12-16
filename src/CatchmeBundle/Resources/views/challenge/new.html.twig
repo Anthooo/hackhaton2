@@ -1,5 +1,4 @@
 {% extends "base.html.twig" %}
-
 {% block body %}
     {% include '@Catchme/Include/navbar2.html.twig' %}
 
@@ -8,15 +7,34 @@
     <h1>Challenge creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+        {{ form_label(form.nom) }}
+        {{ form_widget(form.nom) }}
+
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+
+        {{ form_label(form.localisation) }}
+        {{ form_widget(form.localisation) }}
+
+        {{ form_label(form.image) }}
+        {{ form_widget(form.image) }}
+
+        <div class="hidden">
+        {{ form_widget(form.latitude) }}
+
+        {{ form_widget((form.longitude)) }}
+        </div>
+
+
         <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
     <ul>
         <li>
             <a href="{{ path('challenge_index') }}">Retour</a>
         </li>
     </ul>
+        {{ form_end(form) }}
+
     </div>
 </div>
 {% endblock %}

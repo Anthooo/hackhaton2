@@ -18,6 +18,11 @@ and (orientation: portrait) {
     width: 100%;
   }
 
+  #map {
+    width: 250px !important;
+    height: 250px !important;
+  }
+
 }
 
 //Iphone 5 landscape
@@ -46,5 +51,10 @@ and (orientation: portrait) {
   .card-container.card {
     width: 100%;
     padding: 15px 15px;
+  }
+
+  #map {
+    width: 300px !important;
+    height: 300px !important;
   }
 }

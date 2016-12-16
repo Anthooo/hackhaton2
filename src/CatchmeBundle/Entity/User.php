@@ -5,35 +5,109 @@ namespace CatchmeBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Model\ParticipantInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
 
+
+    /**
+     * @var string
+     */
+    private $nom;
+
+    /**
+     * @var string
+     */
+    private $prenom;
+
+    /**
+     * @var integer
+     */
+    private $score = 0;
+
+    /**
+     * @var \CatchmeBundle\Entity\Image
+     */
     private $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
+     * @var \Doctrine\Common\Collections\Collection
      */
-    protected $groups;
+    private $challenges;
 
-    public function __construct()
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return User
+     */
+    public function setNom($nom)
     {
-        parent::__construct();
-        // your own logic
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     * @return User
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set score
+     *
+     * @param integer $score
+     * @return User
+     */
+    public function setScore($score)
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    /**
+     * Get score
+     *
+     * @return integer
+     */
+    public function getScore()
+    {
+        return $this->score;
     }
 
     /**
@@ -52,10 +126,43 @@ class User extends BaseUser
     /**
      * Get image
      *
-     * @return \CatchmeBundle\Entity\Image 
+     * @return \CatchmeBundle\Entity\Image
      */
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Add challenges
+     *
+     * @param \CatchmeBundle\Entity\Challenge $challenges
+     * @return User
+     */
+    public function addChallenge(\CatchmeBundle\Entity\Challenge $challenges)
+    {
+        $this->challenges[] = $challenges;
+
+        return $this;
+    }
+
+    /**
+     * Remove challenges
+     *
+     * @param \CatchmeBundle\Entity\Challenge $challenges
+     */
+    public function removeChallenge(\CatchmeBundle\Entity\Challenge $challenges)
+    {
+        $this->challenges->removeElement($challenges);
+    }
+
+    /**
+     * Get challenges
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChallenges()
+    {
+        return $this->challenges;
     }
 }

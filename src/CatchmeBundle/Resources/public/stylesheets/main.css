@@ -1,0 +1,317 @@
+/* line 1, ../sass/_general.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 5, ../sass/_general.scss */
+.profile {
+  color: black;
+}
+
+/* line 9, ../sass/_general.scss */
+.jumbotron p {
+  color: dimgrey;
+  text-align: center;
+}
+
+/* line 14, ../sass/_general.scss */
+.jumbotron {
+  background-color: RGBA(238, 238, 238, 0.8);
+  margin-top: 15%;
+}
+
+/* line 19, ../sass/_general.scss */
+.register {
+  margin-top: 0 !important;
+}
+
+/* line 23, ../sass/_general.scss */
+html {
+  background: url("../images/back2.jpg") center fixed;
+  background-size: cover;
+}
+
+/* line 28, ../sass/_general.scss */
+body {
+  background-color: transparent;
+}
+
+/* line 32, ../sass/_general.scss */
+.classement {
+  margin-top: 10%;
+}
+
+/* line 36, ../sass/_general.scss */
+.img-circle {
+  width: 140px;
+  height: 140px;
+}
+
+/* line 1, ../sass/_login.scss */
+h2 {
+  color: white;
+}
+
+/* line 2, ../sass/_login.scss */
+p {
+  color: white;
+}
+
+/* line 4, ../sass/_login.scss */
+.card-container.card {
+  width: 80%;
+  padding: 40px 40px;
+}
+
+/* line 9, ../sass/_login.scss */
+.login .btn {
+  font-weight: 700;
+  height: 36px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+/*
+ * Card component
+ */
+/* line 21, ../sass/_login.scss */
+.card {
+  background-color: RGBA(238, 238, 238, 0.8);
+  /* just in case there no content*/
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 36, ../sass/_login.scss */
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+/* line 49, ../sass/_login.scss */
+.profile-name-card {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0 0;
+  min-height: 1em;
+}
+
+/* line 57, ../sass/_login.scss */
+.reauth-email {
+  display: block;
+  color: #404040;
+  line-height: 2;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 72, ../sass/_login.scss */
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+  direction: ltr;
+  height: 44px;
+  font-size: 16px;
+}
+
+/* line 79, ../sass/_login.scss */
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 93, ../sass/_login.scss */
+.form-signin .form-control:focus {
+  border-color: #6891a2;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6891a2;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #6891a2;
+}
+
+/* line 100, ../sass/_login.scss */
+.btn.btn-signin {
+  /*background-color: #4d90fe; */
+  /*background-color: rgb(104, 145, 162);
+  / background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+  padding: 0px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
+}
+
+/* line 119, ../sass/_login.scss */
+.forgot-password {
+  color: #6891a2;
+}
+
+/* line 123, ../sass/_login.scss */
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus {
+  color: #0c6121;
+}
+
+/* line 1, ../sass/_navbar.scss */
+.navbar-brand {
+  padding: 3px 15px;
+}
+
+/* line 5, ../sass/_navbar.scss */
+.navbar-brand > img {
+  width: 30%;
+}
+
+/* line 9, ../sass/_navbar.scss */
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* line 14, ../sass/_navbar.scss */
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+  border: transparent;
+}
+
+/* line 20, ../sass/_navbar.scss */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+}
+
+/* line 25, ../sass/_navbar.scss */
+.navbar-default .navbar-toggle {
+  border: transparent;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 7, ../sass/_mediaqueries.scss */
+  .card-container.card {
+    width: 100%;
+    padding: 15px 15px;
+  }
+
+  /* line 12, ../sass/_mediaqueries.scss */
+  .btn {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* line 17, ../sass/_mediaqueries.scss */
+  input[type=file] {
+    width: 100%;
+  }
+
+  /* line 21, ../sass/_mediaqueries.scss */
+  #map {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  /* line 34, ../sass/_mediaqueries.scss */
+  .logo {
+    width: 15%;
+  }
+
+  /* line 38, ../sass/_mediaqueries.scss */
+  .jumbotron {
+    margin-top: 2%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /* line 51, ../sass/_mediaqueries.scss */
+  .card-container.card {
+    width: 100%;
+    padding: 15px 15px;
+  }
+
+  /* line 56, ../sass/_mediaqueries.scss */
+  #map {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+/* line 1, ../sass/_challenge.scss */
+.table-bordered, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+  border: 1px solid dimgray;
+  text-align: center;
+}
+
+/* line 6, ../sass/_challenge.scss */
+.table-bordered > tbody > tr > td {
+  border-right: 1px solid dimgray;
+}
+
+/* line 10, ../sass/_challenge.scss */
+.thumbnail {
+  background-color: transparent !important;
+  border: none;
+}
+
+/* line 15, ../sass/_challenge.scss */
+h2 {
+  font-size: 45px;
+  color: #0E50A6;
+  text-align: center;
+}
+
+/* line 21, ../sass/_challenge.scss */
+#map {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 25px;
+}
+
+/* line 27, ../sass/_challenge.scss */
+.map {
+  text-align: center;
+}
+
+/* line 31, ../sass/_challenge.scss */
+.photo {
+  width: 50%;
+}

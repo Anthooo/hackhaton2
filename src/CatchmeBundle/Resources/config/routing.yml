@@ -1,10 +1,14 @@
-catchme_user:
-    resource: "@CatchmeBundle/Resources/config/routing/user.yml"
-    prefix:   /user
+catchme_challenge:
+    resource: "@CatchmeBundle/Resources/config/routing/challenge.yml"
+    prefix:   /challenge
 
 catchme_homepage:
     path:     /
     defaults: { _controller: CatchmeBundle:Default:index }
+
+catchme_classement:
+    path: /classement
+    defaults: { _controller: CatchmeBundle:Default:classement}
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -28,3 +32,7 @@ fos_user_change_password:
 fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
     prefix: /group
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message

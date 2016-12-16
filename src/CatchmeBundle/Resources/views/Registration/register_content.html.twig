@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="jumbotron register">
+        <h1>S'enregistrer</h1>
+
+        {#<img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />#}
+        <p id="profile-name" class="profile-name-card"></p>
+            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register form-signin">
+                {{ form_widget(form) }}
+
+                {#<div class="form-group">#}
+                    {#{{ form_label(form.username) }}#}
+                    {#{{ form_errors(form.username) }}#}
+                    {#{{ form_widget(form.username) }}#}
+                {#</div>#}
+
+                {#<div class="form-group">#}
+                    {#{{ form_label(form.nom) }}#}
+                    {#{{ form_errors(form.nom) }}#}
+                    {#{{ form_widget(form.nom) }}#}
+                {#</div>#}
+
+                {#<div class="form-group">#}
+                    {#{{ form_label(form.prenom) }}#}
+                    {#{{ form_errors(form.prenom) }}#}
+                    {#{{ form_widget(form.prenom) }}#}
+                {#</div>#}
+
+                {#<div class="form-group">#}
+                    {#{{ form_label(form.plainPassword.first) }}#}
+                    {#{{ form_errors(form.plainPassword.first) }}#}
+                    {#{{ form_widget(form.plainPassword.first) }}#}
+                {#</div>#}
+
+                {#<div class="form-group">#}
+                    {#{{ form_label(form.plainPassword.second) }}#}
+                    {#{{ form_errors(form.plainPassword.second) }}#}
+                    {#{{ form_widget(form.plainPassword.second) }}#}
+                {#</div>#}
+
+
+                {#<div class="form-group">#}
+                    {#<label for="fos_user_registration_form[image][file]">Avatar</label>#}
+                    {#{{ form_errors(form.image.file) }}#}
+                    {#{{ form_widget(form.image.file) }}#}
+                {#</div>#}
+
+                <div>
+                    <input class="btn btn-primary btn-lg center-block login" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

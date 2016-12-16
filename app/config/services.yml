@@ -4,6 +4,28 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+#   Surcharge du registration form type de fosuser
+    app.form.registration:
+        class: CatchmeBundle\Form\RegistrationFormType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+    redirect.after.login:
+        class: CatchmeBundle\Redirection\AfterLoginRedirection
+        arguments: [@router]
+
+
+
+##   Service de redirection après le login en fonction des roles
+#    redirect.after.login:
+#        class: TR\MainBundle\Redirection\AfterLoginRedirection
+#        arguments: [@router, @doctrine.orm.entity_manager]
+
+fos_user:
+    registration:
+        form:
+            type: app_user_registration
+
+
+

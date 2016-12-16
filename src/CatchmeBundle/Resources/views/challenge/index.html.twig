@@ -1,0 +1,84 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% include '@Catchme/Include/navbar2.html.twig' %}
+
+    <div class="container">
+        <div class="jumbotron register">
+            <h1>Challenges en cours</h1>
+
+            <table id="challenge" class="display table table-bordered">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Localisation</th>
+                    {#<th>Longitude</th>#}
+                    {#<th>Latitude</th>#}
+                    <th>Image</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for challenge in challenges %}
+                    <tr>
+                        <td><a href="{{ path('challenge_show', { 'id': challenge.id }) }}">{{ challenge.id }}</a></td>
+                        <td>{{ challenge.nom }}</td>
+                        <td>{{ challenge.description }}</td>
+                        <td>{{ challenge.localisation }}</td>
+                        {#<td>{{ challenge.longitude }}</td>#}
+                        {#<td>{{ challenge.latitude }}</td>#}
+                        <td>
+                            <div class="center-block">
+                                <a class="thumbnail fancybox" rel="ligthbox" href="{{ asset('uploads/images/') }}{{ challenge.image }}">
+                                    <img class="img-responsive img-circle" alt="" src="{{ asset('uploads/images/') }}{{ challenge.image }}" />
+                                </a>
+                            </div>
+                        </td>
+
+                        <td>
+
+                            <a href="{{ path('challenge_show', { 'id': challenge.id }) }}">Go !</a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <a class="btn btn-primary" href="{{ path('challenge_new') }}">Créer votre challenge</a>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+
+            $('#challenge').DataTable({
+                "dom": '<lf<t>ip>',
+                "pageLength": 5,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "language": {
+                    "lengthMenu": "_MENU_ ",
+                    "zeroRecords": "Rien ne correspond à votre recherche désolé",
+                    "info": "Page _PAGE_ / _PAGES_",
+                    "search": "Rechercher:",
+                    "infoFiltered":   "(parmi _MAX_ modèles)",
+                    "paginate": {
+                        "first":      "Premier",
+                        "last":       "Dernier",
+                        "next":       "Suivant",
+                        "previous":   "Précédent"
+                    }
+                }}
+            );
+
+        } );
+    </script>
+{% endblock %}

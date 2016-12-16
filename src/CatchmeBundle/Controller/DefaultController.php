@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('CatchmeBundle:Default:index.html.twig');
     }
+
+    public function classementAction()
+    {
+        return $this->render('CatchmeBundle:Default:classement.html.twig');
+    }
 }

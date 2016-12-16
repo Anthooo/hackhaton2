@@ -7,21 +7,32 @@ CatchmeBundle\Entity\User:
             generator:
                 strategy: AUTO
 
+    fields:
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        score:
+            type: integer
+            nullable: true
+
     manyToOne:
         image:
             targetEntity: CatchmeBundle\Entity\Image
+            nullable: true
             cascade: ["persist", "remove"]
-    lifecycleCallbacks: {  }
 
     manyToMany:
-        groups:
-            targetEntity: Group
-            joinTable:
-                name: fos_user_group
-                joinColumns:
-                    user_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    group_id:
-                        referencedColumnName: id
+        challenges:
+            targetEntity: CatchmeBundle\Entity\Challenge
+            nullable: true
+            inversedBy: users
+            joinColumns:
+                name: group_challenge
+
+    lifecycleCallbacks: {  }
+
+
 

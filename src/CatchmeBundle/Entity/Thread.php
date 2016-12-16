@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/Thread.php
+// src/CatchmeBundle/Entity/Thread.php
 
 namespace CatchmeBundle\Entity;
 
@@ -12,35 +12,49 @@ use FOS\MessageBundle\Entity\Thread as BaseThread;
  */
 class Thread extends BaseThread
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+
 
     /**
-     * @ORM\ManyToOne(targetEntity="CatchmeBundle\Entity\User")
-     * @var \FOS\MessageBundle\Model\ParticipantInterface
+     * Remove message
+     *
+     * @param \CatchmeBundle\Entity\Message $message
      */
-    protected $createdBy;
+    public function removeMessage(\CatchmeBundle\Entity\Message $message)
+    {
+        $this->messages->removeElement($message);
+    }
 
     /**
-     * @ORM\OneToMany(
-     *   targetEntity="CatchmeBundle\Entity\Message",
-     *   mappedBy="thread"
-     * )
-     * @var Message[]|Collection
+     * Add metadatum
+     *
+     * @param \CatchmeBundle\Entity\ThreadMetadata $metadatum
+     *
+     * @return Thread
      */
-    protected $messages;
+    public function addMetadatum(\CatchmeBundle\Entity\ThreadMetadata $metadatum)
+    {
+        $this->metadata[] = $metadatum;
+
+        return $this;
+    }
 
     /**
-     * @ORM\OneToMany(
-     *   targetEntity="CatchmeBundle\Entity\ThreadMetadata",
-     *   mappedBy="thread",
-     *   cascade={"all"}
-     * )
-     * @var ThreadMetadata[]|Collection
+     * Remove metadatum
+     *
+     * @param \CatchmeBundle\Entity\ThreadMetadata $metadatum
      */
-    protected $metadata;
+    public function removeMetadatum(\CatchmeBundle\Entity\ThreadMetadata $metadatum)
+    {
+        $this->metadata->removeElement($metadatum);
+    }
+
+    /**
+     * Get metadata
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
 }

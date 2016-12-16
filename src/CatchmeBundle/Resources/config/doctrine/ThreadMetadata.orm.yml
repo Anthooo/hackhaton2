@@ -1,0 +1,17 @@
+CatchmeBundle\Entity\ThreadMetadata:
+    type: entity
+    table: null
+    repositoryClass: CatchmeBundle\Repository\ThreadMetadataRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    manyToOne:
+        thread:
+            targetEntity: CatchmeBundle\Entity\Thread
+            inversedBy: metadata
+        participant:
+            targetEntity: CatchmeBundle\Entity\User

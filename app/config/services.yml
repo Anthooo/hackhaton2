@@ -15,6 +15,8 @@ services:
         class: CatchmeBundle\Redirection\AfterLoginRedirection
         arguments: [@router]
 
+
+
 ##   Service de redirection après le login en fonction des roles
 #    redirect.after.login:
 #        class: TR\MainBundle\Redirection\AfterLoginRedirection
@@ -24,4 +26,6 @@ fos_user:
     registration:
         form:
             type: app_user_registration
+
+
 

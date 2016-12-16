@@ -35,4 +35,4 @@ fos_user_group:
 
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
-    prefix: /optional_routing_prefix
+    prefix: /message

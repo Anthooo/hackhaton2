@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/ThreadMetadata.php
+// src/CatchmeBundle/Entity/ThreadMetadata.php
 
 namespace CatchmeBundle\Entity;
 
@@ -11,25 +11,5 @@ use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
  */
 class ThreadMetadata extends BaseThreadMetadata
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-
-    /**
-     * @ORM\ManyToOne(
-     *   targetEntity="CatchmeBundle\Entity\Thread",
-     *   inversedBy="metadata"
-     * )
-     * @var \FOS\MessageBundle\Model\ThreadInterface
-     */
-    protected $thread;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="CatchmeBundle\Entity\User")
-     * @var \FOS\MessageBundle\Model\ParticipantInterface
-     */
-    protected $participant;
+  
 }

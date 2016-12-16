@@ -46,7 +46,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
             $redirection = new RedirectResponse($this->router->generate('fos_user_profile_show'));
         // sinon il s'agit d'un membre
         else
-            $redirection = new RedirectResponse($this->router->generate('fos_user_profile_show'));
+            $redirection = new RedirectResponse($this->router->generate('challenge_index'));
 
         return $redirection;
     }

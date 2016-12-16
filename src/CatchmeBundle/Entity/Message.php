@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/Message.php
+// src/CatchmeBundle/Entity/Message.php
 
 namespace CatchmeBundle\Entity;
 
@@ -12,35 +12,39 @@ use FOS\MessageBundle\Entity\Message as BaseMessage;
  */
 class Message extends BaseMessage
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+
 
     /**
-     * @ORM\ManyToOne(
-     *   targetEntity="CatchmeBundle\Entity\Thread",
-     *   inversedBy="messages"
-     * )
-     * @var \FOS\MessageBundle\Model\ThreadInterface
+     * Add metadatum
+     *
+     * @param \CatchmeBundle\Entity\MessageMetadata $metadatum
+     *
+     * @return Message
      */
-    protected $thread;
+    public function addMetadatum(\CatchmeBundle\Entity\MessageMetadata $metadatum)
+    {
+        $this->metadata[] = $metadatum;
+
+        return $this;
+    }
 
     /**
-     * @ORM\ManyToOne(targetEntity="CatchmeBundle\Entity\User")
-     * @var \FOS\MessageBundle\Model\ParticipantInterface
+     * Remove metadatum
+     *
+     * @param \CatchmeBundle\Entity\MessageMetadata $metadatum
      */
-    protected $sender;
+    public function removeMetadatum(\CatchmeBundle\Entity\MessageMetadata $metadatum)
+    {
+        $this->metadata->removeElement($metadatum);
+    }
 
     /**
-     * @ORM\OneToMany(
-     *   targetEntity="CatchmeBundle\Entity\MessageMetadata",
-     *   mappedBy="message",
-     *   cascade={"all"}
-     * )
-     * @var MessageMetadata[]|Collection
+     * Get metadata
+     *
+     * @return \Doctrine\Common\Collections\Collection
      */
-    protected $metadata;
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
 }

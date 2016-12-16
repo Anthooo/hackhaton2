@@ -310,3 +310,8 @@ h2 {
 .map {
   text-align: center;
 }
+
+/* line 31, ../sass/_challenge.scss */
+.photo {
+  width: 50%;
+}
